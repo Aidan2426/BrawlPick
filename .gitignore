@@ -1,0 +1,17 @@
+# Secrets
+.env
+.env.local
+
+# Data files (too large / scraped from API)
+data/
+
+# Trained model (pickle files can be a security concern if shared)
+model/*.pkl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
