@@ -33,7 +33,7 @@ HEADERS = {
 }
 
 # How many ranked match records to collect before stopping
-TARGET_BATTLES = 5000
+TARGET_BATTLES = 50000
 
 # Regions to pull leaderboards from (more = more seed players)
 LEADERBOARD_REGIONS = ["global", "US", "KR", "JP", "GB"]

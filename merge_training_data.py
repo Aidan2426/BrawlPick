@@ -124,7 +124,7 @@ if unknown_count:
     missing = set()
     for col in brawler_cols:
         missing |= set(battles.loc[battles[f"{col}_class"] == "Unknown", col].unique())
-    print(f"  Brawlers missing from brawlers.csv: {sorted(missing)}")
+    print(f"  Brawlers missing from brawlers.csv: {sorted(b for b in missing if isinstance(b, str))}")
 
 # ─────────────────────────────────────────────
 # Clean up columns for final output
