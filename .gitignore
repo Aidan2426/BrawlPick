@@ -2,11 +2,9 @@
 .env
 .env.local
 
-# Data files (too large / scraped from API)
-data/
-
-# Trained model (pickle files can be a security concern if shared)
-model/*.pkl
+# Large scraped data files (regenerate with collect_battle_logs.py)
+data/raw/battle_logs*.csv
+data/raw/top_players.csv
 
 # Python
 __pycache__/

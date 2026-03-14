@@ -1,0 +1,352 @@
+map_id,map_name,map_hash,game_mode_id,game_mode_name,game_mode_color,environment_id,environment_name,disabled,image_url
+15000005,Shooting Star,Shooting-Star,48000003,Bounty,#24d6ff,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15000005.png
+15000007,Hard Rock Mine,Hard-Rock-Mine,48000000,Gem Grab,#d852ff,3,Mine,False,https://cdn.brawlify.com/maps/regular/15000007.png
+15000008,Crystal Arcade,Crystal-Arcade,48000000,Gem Grab,#d852ff,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15000008.png
+15000009,Deathcap Trap,Deathcap-Trap,48000000,Gem Grab,#d852ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000009.png
+15000010,Gem Fort,Gem-Fort,48000000,Gem Grab,#d852ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000010.png
+15000011,Undermine,Undermine,48000000,Gem Grab,#d852ff,3,Mine,False,https://cdn.brawlify.com/maps/regular/15000011.png
+15000018,Kaboom Canyon,Kaboom-Canyon,48000002,Heist,#d852ff,1,Default,False,https://cdn.brawlify.com/maps/regular/15000018.png
+15000019,Safe Zone,Safe-Zone,48000002,Heist,#d852ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000019.png
+15000022,Hideout,Hideout,48000003,Bounty,#24d6ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15000022.png
+15000024,Backyard Bowl,Backyard-Bowl,48000005,Brawl Ball,#9ab1fd,11,Grassfield,False,https://cdn.brawlify.com/maps/regular/15000024.png
+15000025,Triple Dribble,Triple-Dribble,48000005,Brawl Ball,#9ab1fd,11,Grassfield,False,https://cdn.brawlify.com/maps/regular/15000025.png
+15000026,Pinhole Punt,Pinhole-Punt,48000005,Brawl Ball,#9ab1fd,11,Grassfield,False,https://cdn.brawlify.com/maps/regular/15000026.png
+15000050,Sneaky Fields,Sneaky-Fields,48000005,Brawl Ball,#9ab1fd,13,Stuntshowbb,False,https://cdn.brawlify.com/maps/regular/15000050.png
+15000051,Super Beach,Super-Beach,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15000051.png
+15000053,Hot Potato,Hot-Potato,48000002,Heist,#d852ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000053.png
+15000072,Bridge Too Far,Bridge-Too-Far,48000002,Heist,#d852ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000072.png
+15000082,Layer Cake,Layer-Cake,48000003,Bounty,#24d6ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000082.png
+15000083,Dry Season,Dry-Season,48000003,Bounty,#24d6ff,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15000083.png
+15000115,Double Swoosh,Double-Swoosh,48000000,Gem Grab,#d852ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15000115.png
+15000118,Pinball Dreams,Pinball-Dreams,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15000118.png
+15000132,Center Stage,Center-Stage,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15000132.png
+15000137,Pit Stop,Pit-Stop,48000002,Heist,#d852ff,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15000137.png
+15000143,Beach Ball,Beach-Ball,48000005,Brawl Ball,#9ab1fd,13,Stuntshowbb,False,https://cdn.brawlify.com/maps/regular/15000143.png
+15000144,Sunny Soccer,Sunny-Soccer,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15000144.png
+15000292,Open Business,Open-Business,48000017,Hot Zone,#ff4343,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000292.png
+15000293,Parallel Plays,Parallel-Plays,48000017,Hot Zone,#ff4343,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15000293.png
+15000295,No Excuses,No-Excuses,48000003,Bounty,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000295.png
+15000300,Ring Of Fire,Ring-Of-Fire,48000017,Hot Zone,#ff4343,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15000300.png
+15000306,Dueling Beetles,Dueling-Beetles,48000017,Hot Zone,#ff4343,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000306.png
+15000343,Rustic Arcade,Rustic-Arcade,48000000,Gem Grab,#d852ff,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15000343.png
+15000367,Goldarm Gulch,Goldarm-Gulch,48000020,Knockout,#fd9b0e,1,Default,False,https://cdn.brawlify.com/maps/regular/15000367.png
+15000368,Belles Rock,Belles-Rock,48000020,Knockout,#fd9b0e,1,Default,False,https://cdn.brawlify.com/maps/regular/15000368.png
+15000377,Tiger Leap,Tiger-Leap,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000377.png
+15000378,Block Party,Block-Party,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000378.png
+15000379,Power Alley,Power-Alley,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000379.png
+15000380,Strong Side,Strong-Side,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000380.png
+15000381,Pancake,Pancake,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000381.png
+15000382,Jungle Ball,Jungle-Ball,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000382.png
+15000383,Floater,Floater,48000023,Volley Brawl,#c2ed00,20,Stuntshowvolley,False,https://cdn.brawlify.com/maps/regular/15000383.png
+15000384,Ball Hog,Ball-Hog,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000384.png
+15000385,Reversal,Reversal,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000385.png
+15000386,Pocket Pass,Pocket-Pass,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000386.png
+15000387,Turnover,Turnover,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000387.png
+15000388,Alley Oop,Alley-Oop,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000388.png
+15000389,Slam Dunk,Slam-Dunk,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000389.png
+15000390,Triple-Double,Triple-Double,48000022,Basket Brawl,#2fc4f9,21,Rooftop,False,https://cdn.brawlify.com/maps/regular/15000390.png
+15000429,Deep End,Deep-End,48000020,Knockout,#fd9b0e,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000429.png
+15000440,Flaring Phoenix,Flaring-Phoenix,48000020,Knockout,#fd9b0e,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15000440.png
+15000459,Flaring Phoenix,Flaring-Phoenix,48000024,Duels,#c2ed00,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15000459.png
+15000460,No Surrender,No-Surrender,48000024,Duels,#c2ed00,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000460.png
+15000461,Shrouding Serpent,Shrouding-Serpent,48000024,Duels,#c2ed00,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15000461.png
+15000463,Warriors Way,Warriors-Way,48000024,Duels,#c2ed00,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000463.png
+15000468,Monkey Maze,Monkey-Maze,48000024,Duels,#c2ed00,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000468.png
+15000499,Open Space,Open-Space,48000000,Gem Grab,#d852ff,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000499.png
+15000502,Flowing Springs,Flowing-Springs,48000020,Knockout,#fd9b0e,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000502.png
+15000527,Open Zone,Open-Zone,48000017,Hot Zone,#ff4343,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000527.png
+15000528,New Perspective,New-Perspective,48000020,Knockout,#fd9b0e,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15000528.png
+15000548,Out In The Open,Out-In-The-Open,48000020,Knockout,#fd9b0e,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000548.png
+15000553,Dont Turn Around,Dont-Turn-Around,48000003,Bounty,#24d6ff,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15000553.png
+15000554,Side By Side,Side-By-Side,48000003,Bounty,#24d6ff,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000554.png
+15000581,Healthy Middle Ground,Healthy-Middle-Ground,48000020,Knockout,#fd9b0e,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15000581.png
+15000645,Slippery Road,Slippery-Road,48000031,Wipeout 5v5,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000645.png
+15000646,Icy Ice Park,Icy-Ice-Park,48000031,Wipeout 5v5,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000646.png
+15000647,Frosty Tracks,Frosty-Tracks,48000031,Wipeout 5v5,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000647.png
+15000703,New Horizons,New-Horizons,48000020,Knockout,#fd9b0e,3,Mine,False,https://cdn.brawlify.com/maps/regular/15000703.png
+15000734,Four Levels,Four-Levels,48000020,Knockout,#fd9b0e,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000734.png
+15000748,Rusty Rebound,Rusty-Rebound,48000037,Paint Brawl,#9ab1fd,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15000748.png
+15000751,Skull Creek,Skull-Creek,48000038,Trio Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000751.png
+15000753,Paperback Pond,Paperback-Pond,48000040,Soul Collector,#24d6ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000753.png
+15000777,Final Four,Final-Four-Duo,48000009,Duo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000777.png
+15000796,Ring O Brawlin,Ring-O-Brawlin,48000038,Trio Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000796.png
+15000819,Foursquare Fortress,Foursquare-Fortress,48000040,Soul Collector,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000819.png
+15000820,Broiler Room,Broiler-Room,48000040,Soul Collector,#24d6ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000820.png
+15000821,Hoop Boot Hill,Hoop-Boot-Hill,48000040,Soul Collector,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000821.png
+15000822,Kooky Gates,Kooky-Gates,48000040,Soul Collector,#24d6ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000822.png
+15000823,Afterpiece Arena,Afterpiece-Arena,48000040,Soul Collector,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000823.png
+15000824,Divine Descent,Divine-Descent,48000011,Spirit Wars,#ff6847,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000824.png
+15000825,Hellish Harvest,Hellish-Harvest,48000011,Spirit Wars,#ff6847,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000825.png
+15000826,Final Frontier,Final-Frontier,48000011,Spirit Wars,#ff6847,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000826.png
+15000827,Infernal Invasion,Infernal-Invasion,48000011,Spirit Wars,#ff6847,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000827.png
+15000828,Celestial Crusade,Celestial-Crusade,48000011,Spirit Wars,#ff6847,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000828.png
+15000829,Abyssal Assault,Abyssal-Assault,48000011,Spirit Wars,#ff6847,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000829.png
+15000830,Radiant Rampage,Radiant-Rampage,48000011,Spirit Wars,#ff6847,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15000830.png
+15000831,Underworld Uprising,Underworld-Uprising,48000011,Spirit Wars,#ff6847,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000831.png
+15000850,Super Center,Super-Center,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000850.png
+15000851,Slippery Slap,Slippery-Slap,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000851.png
+15000852,Bouncy Bowl,Bouncy-Bowl,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000852.png
+15000853,Below Zero,Below-Zero,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000853.png
+15000854,Cool Box,Cool-Box,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000854.png
+15000855,Starr Garden,Starr-Garden,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15000855.png
+15000882,H For...,H-For..,48000020,Knockout,#fd9b0e,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000882.png
+15000900,Gg 2.0,Gg-20,48000002,Heist,#d852ff,1,Default,False,https://cdn.brawlify.com/maps/regular/15000900.png
+15000909,Wild Greens,Wild-Greens,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000909.png
+15000911,Hidden In Plain Sight,Hidden-In-Plain-Sight,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000911.png
+15000912,Reverse Crossing,Reverse-Crossing,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000912.png
+15000913,Skipyard,Skipyard,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15000913.png
+15000914,Middle Management,Middle-Management,48000056,Treasure Hunt,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000914.png
+15000915,Treasure Marks The Spot,Treasure-Marks-The-Spot,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000915.png
+15000916,Ancient Treasure,Ancient-Treasure,48000056,Treasure Hunt,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000916.png
+15000917,Excellent Excavations,Excellent-Excavations,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000917.png
+15000918,Can You Dig It,Can-You-Dig-It,48000056,Treasure Hunt,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000918.png
+15000919,Stockpile Stadium,Stockpile-Stadium,48000032,Brawl Ball 5v5,#9ab1fd,25,Iceislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15000919.png
+15000920,Big Battle Basin,Big-Battle-Basin,48000031,Wipeout 5v5,#24d6ff,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000920.png
+15000923,Unhappy Arena,Unhappy-Arena,48000035,Knockout 5v5,#fd9b0e,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000923.png
+15000924,Brawl Starrgate,Brawl-Starrgate,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000924.png
+15000925,Snowcone Square,Snowcone-Square,48000057,Brawl Hockey,#9ab1fd,32,Hockeyislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15000925.png
+15000927,Fishing Bed,Fishing-Bed,48000017,Hot Zone,#ff4343,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15000927.png
+15000928,Priceless Cactus,Priceless-Cactus,48000005,Brawl Ball,#9ab1fd,13,Stuntshowbb,False,https://cdn.brawlify.com/maps/regular/15000928.png
+15000929,Rooftop Runners,Rooftop-Runners,48000005,Brawl Ball,#9ab1fd,11,Grassfield,False,https://cdn.brawlify.com/maps/regular/15000929.png
+15000931,Lilygear Lake,Lilygear-Lake,48000000,Gem Grab,#d852ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15000931.png
+15000932,Local Restaurants,Local-Restaurants,48000000,Gem Grab,#d852ff,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15000932.png
+15000933,Plain Text,Plain-Text,48000002,Heist,#d852ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15000933.png
+15000935,Brace For Impact,Brace-For-Impact,48000003,Bounty,#24d6ff,3,Mine,False,https://cdn.brawlify.com/maps/regular/15000935.png
+15000944,Skull Creek,Skull-Creek,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000944.png
+15000945,Skull Creek,Skull-Creek-Duo,48000009,Duo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000945.png
+15000946,Skull Creek,Skull-Creek,48000038,Trio Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000946.png
+15000947,Rockwall Brawl,Rockwall-Brawl,48000006,Solo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000947.png
+15000948,Rockwall Brawl,Rockwall-Brawl-Duo,48000009,Duo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000948.png
+15000949,Rockwall Brawl,Rockwall-Brawl,48000038,Trio Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000949.png
+15000950,Feast Or Famine,Feast-Or-Famine,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000950.png
+15000951,Feast Or Famine,Feast-Or-Famine-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000951.png
+15000952,Feast Or Famine,Feast-Or-Famine,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000952.png
+15000953,Cavern Churn,Cavern-Churn,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000953.png
+15000954,Cavern Churn,Cavern-Churn-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000954.png
+15000955,Cavern Churn,Cavern-Churn,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000955.png
+15000956,Acid Lakes,Acid-Lakes,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000956.png
+15000957,Acid Lakes,Acid-Lakes-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000957.png
+15000958,Acid Lakes,Acid-Lakes,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000958.png
+15000959,Flying Fantasies,Flying-Fantasies,48000006,Solo Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000959.png
+15000960,Flying Fantasies,Flying-Fantasies-Duo,48000009,Duo Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000960.png
+15000961,Flying Fantasies,Flying-Fantasies,48000038,Trio Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000961.png
+15000965,Double Trouble,Double-Trouble,48000006,Solo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000965.png
+15000966,Double Trouble,Double-Trouble-Duo,48000009,Duo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000966.png
+15000967,Double Trouble,Double-Trouble,48000038,Trio Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15000967.png
+15000968,Safety Center,Safety-Center,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000968.png
+15000969,Safety Center,Safety-Center-Duo,48000009,Duo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000969.png
+15000970,Safety Center,Safety-Center,48000038,Trio Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000970.png
+15000971,Siberian Stand Off,Siberian-Stand-Off,48000032,Brawl Ball 5v5,#9ab1fd,25,Iceislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15000971.png
+15000973,Mirages Of Madness,Mirages-Of-Madness,48000031,Wipeout 5v5,#24d6ff,28,Bazaarislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000973.png
+15000975,Survival Of The Meanest,Survival-Of-The-Meanest,48000035,Knockout 5v5,#fd9b0e,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000975.png
+15000979,Arctic Ambush,Arctic-Ambush,48000033,Gem Grab 5v5,#d852ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000979.png
+15000980,Treasure Island,Treasure-Island,48000033,Gem Grab 5v5,#d852ff,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000980.png
+15000984,Waveform,Waveform,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000984.png
+15000985,Waveform,Waveform-Duo,48000009,Duo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000985.png
+15000986,Waveform,Waveform,48000038,Trio Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15000986.png
+15000987,Core Of Orbit,Core-Of-Orbit,48000006,Solo Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000987.png
+15000988,Core Of Orbit,Core-Of-Orbit-Duo,48000009,Duo Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000988.png
+15000989,Core Of Orbit,Core-Of-Orbit,48000038,Trio Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15000989.png
+15000990,Lilypond Grove,Lilypond-Grove,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000990.png
+15000991,Lilypond Grove,Lilypond-Grove-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000991.png
+15000992,Lilypond Grove,Lilypond-Grove,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15000992.png
+15000993,Kaiju Lake,Kaiju-Lake,48000048,Brawl Arena,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000993.png
+15000996,Arena Of Glory,Arena-Of-Glory,48000048,Brawl Arena,#24d6ff,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000996.png
+15000997,Mirage Arena,Mirage-Arena,48000048,Brawl Arena,#24d6ff,28,Bazaarislandshowdown,False,https://cdn.brawlify.com/maps/regular/15000997.png
+15001012,Crystal Eye Castle,Crystal-Eye-Castle,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001012.png
+15001013,Crystal Eye Castle,Crystal-Eye-Castle-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001013.png
+15001014,Crystal Eye Castle,Crystal-Eye-Castle,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001014.png
+15001015,Seeker,Seeker,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001015.png
+15001016,Seeker,Seeker-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001016.png
+15001017,Seeker,Seeker,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001017.png
+15001018,Double Decker,Double-Decker,48000020,Knockout,#fd9b0e,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15001018.png
+15001019,Streets With No Name,Streets-With-No-Name,48000020,Knockout,#fd9b0e,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001019.png
+15001020,Grass Knot,Grass-Knot,48000005,Brawl Ball,#9ab1fd,13,Stuntshowbb,False,https://cdn.brawlify.com/maps/regular/15001020.png
+15001021,Spiraling Out,Spiraling-Out,48000005,Brawl Ball,#9ab1fd,11,Grassfield,False,https://cdn.brawlify.com/maps/regular/15001021.png
+15001022,Abracadabra,Abracadabra,48000017,Hot Zone,#ff4343,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001022.png
+15001023,In The Liminal,In-The-Liminal,48000017,Hot Zone,#ff4343,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001023.png
+15001024,Subway Turfers,Subway-Turfers,48000002,Heist,#d852ff,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15001024.png
+15001026,On A Roll,On-A-Roll,48000000,Gem Grab,#d852ff,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001026.png
+15001027,Storage Sector,Storage-Sector,48000000,Gem Grab,#d852ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001027.png
+15001029,Moonbark Meadow,Moonbark-Meadow,48000063,Dodgebrawl,#2ef3e0,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001029.png
+15001030,Case Of The Mondays,Case-Of-The-Mondays,48000016,Present Plunder,#2ef3e0,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001030.png
+15001031,Jump To Conclusions,Jump-To-Conclusions,48000016,Present Plunder,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001031.png
+15001032,Rebound Ring,Rebound-Ring,48000063,Dodgebrawl,#2ef3e0,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15001032.png
+15001033,Hug Or Hurl,Hug-Or-Hurl,48000063,Dodgebrawl,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001033.png
+15001034,Massive Meltdown,Massive-Meltdown,48000057,Brawl Hockey,#9ab1fd,32,Hockeyislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15001034.png
+15001035,Frostbite Rink,Frostbite-Rink,48000057,Brawl Hockey,#9ab1fd,32,Hockeyislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15001035.png
+15001036,Thin Walls,Thin-Walls,48000016,Present Plunder,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001036.png
+15001037,Paper Jam,Paper-Jam,48000016,Present Plunder,#2ef3e0,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001037.png
+15001038,Side Hustle,Side-Hustle,48000063,Dodgebrawl,#2ef3e0,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15001038.png
+15001039,Squish Court,Squish-Court,48000063,Dodgebrawl,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001039.png
+15001040,Wispwillow Ward,Wispwillow-Ward,48000063,Dodgebrawl,#2ef3e0,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001040.png
+15001041,Cold Snap,Cold-Snap,48000057,Brawl Hockey,#9ab1fd,32,Hockeyislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15001041.png
+15001042,Toot Town,Toot-Town,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001042.png
+15001043,Insane Streamer,Insane-Streamer,48000032,Brawl Ball 5v5,#9ab1fd,25,Iceislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15001043.png
+15001044,Pocket Pleasures,Pocket-Pleasures,48000032,Brawl Ball 5v5,#9ab1fd,25,Iceislandshowdownbb,False,https://cdn.brawlify.com/maps/regular/15001044.png
+15001045,Cobblestone Swamp,Cobblestone-Swamp,48000033,Gem Grab 5v5,#d852ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001045.png
+15001046,Public Transport,Public-Transport,48000033,Gem Grab 5v5,#d852ff,28,Bazaarislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001046.png
+15001047,Brawlerverse,Brawlerverse,48000035,Knockout 5v5,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001047.png
+15001048,The Emptiness Machine,The-Emptiness-Machine,48000035,Knockout 5v5,#fd9b0e,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001048.png
+15001049,Hee Hee,Hee-Hee,48000031,Wipeout 5v5,#24d6ff,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001049.png
+15001050,Island Of Finality,Island-Of-Finality,48000031,Wipeout 5v5,#24d6ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001050.png
+15001051,Whisper Vale,Whisper-Vale,48000000,Gem Grab,#d852ff,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15001051.png
+15001052,Extreme Nonchalance,Extreme-Nonchalance,48000000,Gem Grab,#d852ff,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15001052.png
+15001053,Sidetrack,Sidetrack,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001053.png
+15001054,Match 1123581321,Match-1123581321,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001054.png
+15001055,Twentyfive To Two,Twentyfive-To-Two,48000025,Wipeout,#24d6ff,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001055.png
+15001056,Time Flies,Time-Flies,48000025,Wipeout,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001056.png
+15001057,Playmaker,Playmaker,48000017,Hot Zone,#ff4343,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15001057.png
+15001058,Think Ahead,Think-Ahead,48000020,Knockout,#fd9b0e,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001058.png
+15001059,Call Of The Water,Call-Of-The-Water,48000020,Knockout,#fd9b0e,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001059.png
+15001060,Coin Flip,Coin-Flip,48000024,Duels,#c2ed00,2,Arcade,False,https://cdn.brawlify.com/maps/regular/15001060.png
+15001061,Search And Destroy,Search-And-Destroy,48000024,Duels,#c2ed00,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001061.png
+15001062,Zip Zap Zoom,Zip-Zap-Zoom,48000002,Heist,#d852ff,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001062.png
+15001063,Corner Cave,Corner-Cave,48000002,Heist,#d852ff,3,Mine,False,https://cdn.brawlify.com/maps/regular/15001063.png
+15001064,Knockout Grounds,Knockout-Grounds,48000048,Brawl Arena,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001064.png
+15001065,The Smackdome,The-Smackdome,48000048,Brawl Arena,#24d6ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001065.png
+15001067,Starrburst,Starrburst,48000003,Bounty,#24d6ff,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001067.png
+15001068,Million Dollars,Million-Dollars,48000016,Present Plunder,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001068.png
+15001069,Metro Mayhem,Metro-Mayhem,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001069.png
+15001070,Backtrack Attack,Backtrack-Attack,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001070.png
+15001071,Loopy Line,Loopy-Line,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001071.png
+15001072,Trainbow Road,Trainbow-Road,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001072.png
+15001073,Choo Choo Showdown,Choo-Choo-Showdown,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001073.png
+15001074,Insert Victory,Insert-Victory,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001074.png
+15001075,Invaded Space,Invaded-Space,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001075.png
+15001076,1-2-3 Play,1-2-3-Play,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001076.png
+15001077,Prize Pushing,Prize-Pushing,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001077.png
+15001084,Crazy For Credits,Crazy-For-Credits,48000055,Token Run,#2ef3e0,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001084.png
+15001085,T-Rail Rush,T-Rail-Rush,48000064,Subway Run,#2ef3e0,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001085.png
+15001086,Dodge Or Die,Dodge-Or-Die,48000063,Dodgebrawl,#2ef3e0,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001086.png
+15001087,Truth,Truth,48000006,Solo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001087.png
+15001088,Twisting Vines,Twisting-Vines,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001088.png
+15001089,Atlas,Atlas,48000000,Gem Grab,#d852ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001089.png
+15001090,Afterparty,Afterparty,48000000,Gem Grab,#d852ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001090.png
+15001091,Just Another Race To Anywhere,Just-Another-Race-To-Anywhere,48000017,Hot Zone,#ff4343,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15001091.png
+15001092,Back Shuffle,Back-Shuffle,48000017,Hot Zone,#ff4343,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001092.png
+15001093,Flute Chutes,Flute-Chutes,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001093.png
+15001094,Grab The Moment,Grab-The-Moment,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001094.png
+15001095,Party For You,Party-For-You,48000020,Knockout,#fd9b0e,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001095.png
+15001096,A Ballad About Minced Cutlets,A-Ballad-About-Minced-Cutlets,48000020,Knockout,#fd9b0e,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001096.png
+15001097,The Great Mighty Lou,The-Great-Mighty-Lou,48000024,Duels,#c2ed00,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001097.png
+15001098,All Things Wicked,All-Things-Wicked,48000002,Heist,#d852ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001098.png
+15001099,Photic Doom,Photic-Doom,48000002,Heist,#d852ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001099.png
+15001100,Serpentshrine Island,Serpentshrine-Island,48000035,Knockout 5v5,#fd9b0e,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001100.png
+15001101,Crescendo,Crescendo,48000035,Knockout 5v5,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001101.png
+15001102,Journey Of A Thousand Steps,Journey-Of-A-Thousand-Steps,48000035,Knockout 5v5,#fd9b0e,28,Bazaarislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001102.png
+15001103,Catacombs,Catacombs,48000025,Wipeout,#24d6ff,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001103.png
+15001104,Deathmatch,Deathmatch,48000025,Wipeout,#24d6ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001104.png
+15001105,Pound Of Mass,Pound-Of-Mass,48000025,Wipeout,#24d6ff,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15001105.png
+15001106,Wonderland,Wonderland,48000025,Wipeout,#24d6ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001106.png
+15001107,Truth,Truth-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001107.png
+15001108,Twisting Vines,Twisting-Vines-Duo,48000009,Duo Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001108.png
+15001109,Truth,Truth,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001109.png
+15001110,Twisting Vines,Twisting-Vines,48000038,Trio Showdown,#91e136,8,Defaultshowdown,False,https://cdn.brawlify.com/maps/regular/15001110.png
+15001111,Slay Bay,Slay-Bay,48000066,Trio Wipeout,#24d6ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001111.png
+15001112,Overpower Outpost,Overpower-Outpost,48000066,Trio Wipeout,#24d6ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001112.png
+15001113,Nippy Narrows,Nippy-Narrows,48000066,Trio Wipeout,#24d6ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001113.png
+15001119,Kroket,Kroket,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001119.png
+15001120,Lotus,Lotus,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001120.png
+15001121,Gated Community,Gated-Community,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001121.png
+15001122,Makeshift Scaffolding,Makeshift-Scaffolding,48000006,Solo Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001122.png
+15001123,Railroad Robbery,Railroad-Robbery,48000000,Gem Grab,#d852ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001123.png
+15001125,Zone Splitting,Zone-Splitting,48000017,Hot Zone,#ff4343,3,Mine,False,https://cdn.brawlify.com/maps/regular/15001125.png
+15001126,Ticket To Die,Ticket-To-Die,48000017,Hot Zone,#ff4343,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001126.png
+15001127,Chivalry,Chivalry,48000020,Knockout,#fd9b0e,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001127.png
+15001128,Polar Payoff,Polar-Payoff,48000065,Trio Gem Grab,#d852ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001128.png
+15001129,Mine All Mine,Mine-All-Mine,48000065,Trio Gem Grab,#d852ff,35,Mortuaryislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001129.png
+15001130,Treasure Pressure,Treasure-Pressure,48000065,Trio Gem Grab,#d852ff,31,Madevilislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001130.png
+15001133,Kroket,Kroket,48000067,Upside Showdown,#33ffff,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001133.png
+15001134,Lotus,Lotus,48000067,Upside Showdown,#33ffff,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001134.png
+15001135,Gated Community,Gated-Community,48000067,Upside Showdown,#33ffff,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001135.png
+15001136,Cold Cash,Cold-Cash,48000065,Trio Gem Grab,#d852ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001136.png
+15001137,Permafrost Bayou,Permafrost-Bayou,48000066,Trio Wipeout,#24d6ff,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001137.png
+15001138,Kroket,Kroket-Duo,48000009,Duo Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001138.png
+15001139,Lotus,Lotus-Duo,48000009,Duo Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001139.png
+15001140,Gated Community,Gated-Community-Duo,48000009,Duo Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001140.png
+15001141,Makeshift Scaffolding,Makeshift-Scaffolding-Duo,48000009,Duo Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001141.png
+15001142,Kroket,Kroket,48000038,Trio Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001142.png
+15001143,Lotus,Lotus,48000038,Trio Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001143.png
+15001144,Gated Community,Gated-Community,48000038,Trio Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001144.png
+15001145,Makeshift Scaffolding,Makeshift-Scaffolding,48000038,Trio Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001145.png
+15001146,Lovers Lane,Lovers-Lane,48000068,Love Bombing,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001146.png
+15001147,Caged Hearts,Caged-Hearts,48000068,Love Bombing,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001147.png
+15001150,Mega Love Potion Squeak,Mega-Love-Potion-Squeak,48000069,Duo Mega Boss,#7ffb50,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001150.png
+15001151,Mega Bear Shade,Mega-Bear-Shade,48000069,Duo Mega Boss,#7ffb50,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001151.png
+15001152,Mega Brawlentines Angelo,Mega-Brawlentines-Angelo,48000069,Duo Mega Boss,#7ffb50,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001152.png
+15001153,Mega Heartbroken Rico,Mega-Heartbroken-Rico,48000069,Duo Mega Boss,#7ffb50,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001153.png
+15001154,Kiss Kaboom,Kiss-Kaboom,48000068,Love Bombing,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001154.png
+15001155,Fuseyard,Fuseyard,48000070,Safe Blast,#d852ff,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15001155.png
+15001157,Gunpowder Gangway,Gunpowder-Gangway,48000070,Safe Blast,#d852ff,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15001157.png
+15001158,Crush & Burn,Crush-&-Burn,48000068,Love Bombing,#2ef3e0,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001158.png
+15001159,Safe Bet,Safe-Bet,48000070,Safe Blast,#d852ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001159.png
+15001160,Fast Blast Alley,Fast-Blast-Alley,48000070,Safe Blast,#d852ff,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001160.png
+15001161,Violent Withdrawal,Violent-Withdrawal,48000070,Safe Blast,#d852ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001161.png
+15001162,Rastermind,Rastermind,48000035,Knockout 5v5,#fd9b0e,22,Iceislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001162.png
+15001163,Walking On Hot Sand,Walking-On-Hot-Sand,48000025,Wipeout,#24d6ff,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15001163.png
+15001164,Too Gimmicky 2,Too-Gimmicky-2,48000025,Wipeout,#24d6ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001164.png
+15001165,Tax Evasion,Tax-Evasion,48000017,Hot Zone,#ff4343,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001165.png
+15001166,The Seven Pillars Of Humanity,The-Seven-Pillars-Of-Humanity,48000017,Hot Zone,#ff4343,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001166.png
+15001167,Singed Earth,Singed-Earth,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001167.png
+15001168,Nutmeg,Nutmeg,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001168.png
+15001169,Aridity,Aridity,48000002,Heist,#d852ff,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15001169.png
+15001170,Quintillion,Quintillion,48000002,Heist,#d852ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001170.png
+15001171,Snake Pit,Snake-Pit,48000000,Gem Grab,#d852ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001171.png
+15001172,Fortress Fall,Fortress-Fall,48000000,Gem Grab,#d852ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001172.png
+15001173,Konnakol,Konnakol,48000020,Knockout,#fd9b0e,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001173.png
+15001174,Paralysis Pen,Paralysis-Pen,48000024,Duels,#c2ed00,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001174.png
+15001175,Wall Hugging,Wall-Hugging,48000003,Bounty,#24d6ff,29,Bizarrecircus,False,https://cdn.brawlify.com/maps/regular/15001175.png
+15001176,Choral Chambers,Choral-Chambers,48000003,Bounty,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001176.png
+15001177,H Is For Holiday,H-Is-For-Holiday,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15001177.png
+15001178,Hyperspace,Hyperspace,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15001178.png
+15001179,Pinned Down,Pinned-Down,48000020,Knockout,#fd9b0e,1,Default,False,https://cdn.brawlify.com/maps/regular/15001179.png
+15001180,North Park Station,North-Park-Station,48000006,Solo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001180.png
+15001181,North Park Station,North-Park-Station-Duo,48000009,Duo Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001181.png
+15001182,North Park Station,North-Park-Station,48000038,Trio Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001182.png
+15001183,Boss Dragon Maisie,Boss-Dragon-Maisie,48000061,Hawkins Hunt,#7ffb50,37,Madevildungeonshowdown,False,https://cdn.brawlify.com/maps/regular/15001183.png
+15001184,Boss Bruce Nita,Boss-Bruce-Nita,48000061,Hawkins Hunt,#7ffb50,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001184.png
+15001185,Boss Dragrom,Boss-Dragrom,48000061,Hawkins Hunt,#7ffb50,37,Madevildungeonshowdown,False,https://cdn.brawlify.com/maps/regular/15001185.png
+15001186,Boss Dragon Griff,Boss-Dragon-Griff,48000061,Hawkins Hunt,#7ffb50,37,Madevildungeonshowdown,False,https://cdn.brawlify.com/maps/regular/15001186.png
+15001187,Boss Crow,Boss-Crow,48000061,Hawkins Hunt,#7ffb50,37,Madevildungeonshowdown,False,https://cdn.brawlify.com/maps/regular/15001187.png
+15001188,Moonveil Mansion,Moonveil-Mansion,48000073,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001188.png
+15001189,Silver Shadow Circus,Silver-Shadow-Circus,48000073,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001189.png
+15001190,Illusion Alley,Illusion-Alley,48000073,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001190.png
+15001191,Doppelzone,Doppelzone,48000073,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001191.png
+15001192,Train Erasure,Train-Erasure,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001192.png
+15001193,Less Is More,Less-Is-More,48000056,Treasure Hunt,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001193.png
+15001194,Skull Creek,Skull-Creek,48000072,Loaded Showdown,#91e136,9,Arcadeshowdown,False,https://cdn.brawlify.com/maps/regular/15001194.png
+15001195,Rockwall Brawl,Rockwall-Brawl,48000072,Loaded Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001195.png
+15001196,Cavern Churn,Cavern-Churn,48000072,Loaded Showdown,#91e136,34,Stuntshowdown,False,https://cdn.brawlify.com/maps/regular/15001196.png
+15001197,Hot Maze,Hot-Maze,48000072,Loaded Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001197.png
+15001198,Side Quests,Side-Quests,48000056,Treasure Hunt,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001198.png
+15001199,Huddle Puddle,Huddle-Puddle,48000056,Treasure Hunt,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001199.png
+15001200,Hello Always Ends With A Goodbye,Hello-Always-Ends-With-A-Goodbye,48000025,Wipeout,#24d6ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001200.png
+15001201,Palette Hangout,Palette-Hangout,48000025,Wipeout,#24d6ff,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001201.png
+15001202,Golden Bay,Golden-Bay,48000017,Hot Zone,#ff4343,4,Rumblejungle,False,https://cdn.brawlify.com/maps/regular/15001202.png
+15001203,Hyacinth House,Hyacinth-House,48000017,Hot Zone,#ff4343,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001203.png
+15001204,Goalies,Goalies,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001204.png
+15001205,No Good Deed,No-Good-Deed,48000005,Brawl Ball,#9ab1fd,14,Bbarena,False,https://cdn.brawlify.com/maps/regular/15001205.png
+15001206,Tuning Fork,Tuning-Fork,48000002,Heist,#d852ff,17,Scrapyard,False,https://cdn.brawlify.com/maps/regular/15001206.png
+15001207,Perpetual Motion,Perpetual-Motion,48000002,Heist,#d852ff,5,Hub,False,https://cdn.brawlify.com/maps/regular/15001207.png
+15001208,Picturesque,Picturesque,48000000,Gem Grab,#d852ff,3,Mine,False,https://cdn.brawlify.com/maps/regular/15001208.png
+15001209,Satomi Springs,Satomi-Springs,48000000,Gem Grab,#d852ff,23,Mortuary,False,https://cdn.brawlify.com/maps/regular/15001209.png
+15001210,Opening Move,Opening-Move,48000020,Knockout,#fd9b0e,33,Retropolis,False,https://cdn.brawlify.com/maps/regular/15001210.png
+15001211,Crab Claws,Crab-Claws,48000020,Knockout,#fd9b0e,16,Bazaar,False,https://cdn.brawlify.com/maps/regular/15001211.png
+15001212,Jumpscare Lair,Jumpscare-Lair,48000024,Duels,#c2ed00,19,Stuntshow,False,https://cdn.brawlify.com/maps/regular/15001212.png
+15001213,Molten To The Core,Molten-To-The-Core,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001213.png
+15001214,Molten To The Core,Molten-To-The-Core-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001214.png
+15001215,Molten To The Core,Molten-To-The-Core,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001215.png
+15001216,Starfruit Supernova,Starfruit-Supernova,48000006,Solo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001216.png
+15001217,Starfruit Supernova,Starfruit-Supernova-Duo,48000009,Duo Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001217.png
+15001218,Starfruit Supernova,Starfruit-Supernova,48000038,Trio Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001218.png
+15001219,Watermelons,Watermelons,48000003,Bounty,#24d6ff,15,Pyramidquest,False,https://cdn.brawlify.com/maps/regular/15001219.png
+15001220,Hit And Run,Hit-And-Run,48000003,Bounty,#24d6ff,10,Madevilmanor,False,https://cdn.brawlify.com/maps/regular/15001220.png
+15001221,Tip Toe,Tip-Toe,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15001221.png
+15001222,Cabin Fever,Cabin-Fever,48000045,Brawl Hockey,#9ab1fd,30,Airhockey,False,https://cdn.brawlify.com/maps/regular/15001222.png
+15001223,Web Of Shadows,Web-Of-Shadows,48000074,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001223.png
+15001224,The Big Top,The-Big-Top,48000074,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001224.png
+15001225,Imposter Pathway,Imposter-Pathway,48000074,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001225.png
+15001226,Copycat Carnival,Copycat-Carnival,48000074,Shadow Smash,#fd9b0e,36,Bizarrecircusislandshowdown,False,https://cdn.brawlify.com/maps/regular/15001226.png
+15001227,Molten To The Core,Molten-To-The-Core,48000072,Loaded Showdown,#91e136,6,Madevilmanorshowdown,False,https://cdn.brawlify.com/maps/regular/15001227.png
+15001228,Starfruit Supernova,Starfruit-Supernova,48000072,Loaded Showdown,#91e136,7,Mortuaryshowdown,False,https://cdn.brawlify.com/maps/regular/15001228.png
