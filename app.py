@@ -98,24 +98,26 @@ all_brawlers = sorted(brawler_win_rates.keys())
 brawlers_df["name_upper"] = brawlers_df["brawler_name"].str.upper()
 brawler_icons = dict(zip(brawlers_df["name_upper"], brawlers_df["icon_url"]))
 
-# Map dropdown — only maps with at least 10 matches in training data
+# Ranked-eligible game modes only (excludes Duels, 5v5, etc.)
+RANKED_MODES = {"Gem Grab", "Brawl Ball", "Heist", "Bounty", "Knockout", "Hot Zone"}
+
+# Map dropdown — ranked modes only, with at least 10 matches in training data
 map_counts = train_df["map"].dropna().str.strip().value_counts()
 maps_with_data = set(map_counts[map_counts >= 10].index)
-maps_df_filtered = maps_df[maps_df["map_name"].isin(maps_with_data)].copy()
+maps_df_filtered = maps_df[
+    maps_df["map_name"].isin(maps_with_data) &
+    maps_df["game_mode_name"].isin(RANKED_MODES)
+].copy()
 maps_df_filtered = maps_df_filtered.sort_values(["game_mode_name", "map_name"])
 map_display_options = [
     f"{row['game_mode_name']} — {row['map_name']}"
     for _, row in maps_df_filtered.iterrows()
 ]
-known_in_active = set(maps_df_filtered["map_name"])
-extra_maps = sorted(maps_with_data - known_in_active - {"nan"})
-map_display_options += [f"Unknown — {m}" for m in extra_maps]
 
 display_to_map = {
     f"{row['game_mode_name']} — {row['map_name']}": row["map_name"]
     for _, row in maps_df_filtered.iterrows()
 }
-display_to_map.update({f"Unknown — {m}": m for m in extra_maps})
 
 map_mode = dict(zip(maps_df["map_name"].str.upper(), maps_df["game_mode_name"]))
 map_env  = dict(zip(maps_df["map_name"].str.upper(), maps_df["environment_name"]))
