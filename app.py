@@ -186,15 +186,30 @@ def build_row_full(map_name: str, my_picks_3: list, enemy_picks_3: list) -> dict
 # Recommendation engine
 # ─────────────────────────────────────────────
 
-def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = 10, n_samples: int = 30) -> pd.DataFrame:
+def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = None, n_samples: int = 30) -> pd.DataFrame:
     """
-    Score each candidate brawler by averaging the model's win probability over
-    n_samples random completions of the unknown draft slots.
-    All candidates are scored in a single batched predict_proba call for speed.
+    Score each candidate brawler.
+
+    First pick (both teams empty): rank directly by map-specific win rate from
+    training data — no model needed, cleanest signal available.
+
+    All other picks: average model win-probability over n_samples random
+    completions of the unknown draft slots.
     """
     picked     = set(b.upper() for b in my_team + enemy_team)
     candidates = [b for b in all_brawlers if b not in picked]
 
+    # ── First pick shortcut ───────────────────────────────────────────────────
+    if not my_team and not enemy_team:
+        scores = []
+        for c in candidates:
+            key = f"{map_name}|{c}"
+            wr  = brawler_map_win_rates.get(key, brawler_win_rates.get(c, brawler_global_mean))
+            scores.append({"brawler": c, "win_prob": wr})
+        df = pd.DataFrame(scores).sort_values("win_prob", ascending=False).reset_index(drop=True)
+        return df if top_n is None else df.head(top_n)
+
+    # ── Model-based scoring ───────────────────────────────────────────────────
     n_my_unknown    = 2 - len(my_team)
     n_enemy_unknown = 3 - len(enemy_team)
 
@@ -210,7 +225,6 @@ def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = 10, n
             enemy_full = (list(enemy_team) + fill[n_my_unknown: n_my_unknown + n_enemy_unknown])[:3]
             all_rows.append(build_row_full(map_name, my_full, enemy_full))
 
-    # Single batched predict_proba call across all candidates × samples
     X     = pd.DataFrame(all_rows)[feature_cols]
     probs = model.predict_proba(X)[:, 1]
 
@@ -219,12 +233,8 @@ def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = 10, n
         for i, c in enumerate(candidates)
     ]
 
-    return (
-        pd.DataFrame(scores)
-        .sort_values("win_prob", ascending=False)
-        .reset_index(drop=True)
-        .head(top_n)
-    )
+    df = pd.DataFrame(scores).sort_values("win_prob", ascending=False).reset_index(drop=True)
+    return df if top_n is None else df.head(top_n)
 
 # ─────────────────────────────────────────────
 # Theme
@@ -394,7 +404,21 @@ if next_slot is not None:
         with st.spinner("Calculating recommendations..."):
             recs = recommend(st.session_state.map_name, my_team, enemy_team)
 
-        st.markdown(_rec_cards_html(recs), unsafe_allow_html=True)
+        st.markdown(_rec_cards_html(recs.head(10)), unsafe_allow_html=True)
+
+        with st.expander(f"See all {len(recs)} brawlers ranked"):
+            for _, row in recs.iterrows():
+                bar_w = int(row["win_prob"] * 200)
+                st.markdown(
+                    f'<div style="display:flex;align-items:center;gap:10px;margin:2px 0;">'
+                    f'<span style="color:white;width:26px;text-align:right;font-size:12px;">{int(row.name)+1}.</span>'
+                    f'<span style="color:white;width:130px;font-size:13px;">{row["brawler"].title()}</span>'
+                    f'<div style="background:#1a2a5e;border-radius:4px;height:14px;width:200px;">'
+                    f'<div style="background:#FFE135;height:100%;width:{bar_w}px;border-radius:4px;"></div></div>'
+                    f'<span style="color:#FFE135;font-size:12px;width:45px;">{row["win_prob"]:.1%}</span>'
+                    f'</div>',
+                    unsafe_allow_html=True
+                )
         st.write("")
 
         col_pick, col_btn = st.columns([3, 1])
