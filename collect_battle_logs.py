@@ -33,7 +33,7 @@ HEADERS = {
 }
 
 # How many ranked match records to collect before stopping
-TARGET_BATTLES = 50000
+TARGET_BATTLES = 10000
 
 # Regions to pull leaderboards from (more = more seed players)
 LEADERBOARD_REGIONS = ["global", "US", "KR", "JP", "GB"]
@@ -123,12 +123,19 @@ def parse_battle(raw: dict, fetched_for_tag: str) -> list[dict]:
     event = raw.get("event", {})
     battle = raw.get("battle", {})
 
-    # Only keep ranked matches
-    # The API uses mode="ranked" and type="ranked" for ranked matches
+    # Only keep ranked matches in the 6 standard ranked game modes.
+    # Strict whitelist prevents seasonal modes (Brawl Hockey, Wipeout 5v5, etc.)
+    # from leaking in even when the API labels them type="ranked".
+    RANKED_MODES = {"gemgrab", "brawlball", "heist", "bounty", "knockout", "hotzone"}
+
     battle_type = battle.get("type", "")
     battle_mode = battle.get("mode", "")
 
-    if battle_type != "ranked" and "ranked" not in battle_mode.lower():
+    if battle_type != "ranked":
+        return []
+
+    mode_clean = battle_mode.lower().replace(" ", "").replace("_", "")
+    if mode_clean not in RANKED_MODES:
         return []
 
     map_name = event.get("map", "")

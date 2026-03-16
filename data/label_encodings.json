@@ -1,135 +1,43 @@
 {
   "map": [
-    "Arena of Glory",
-    "Aridity",
     "Backyard Bowl",
-    "Basket Case",
     "Beach Ball",
-    "Belle's Rock",
-    "Below Zero",
-    "Bouncy Bowl",
     "Cabin Fever",
-    "Canal Grande",
-    "Chivalry",
-    "Cool shapes",
+    "Choral Chambers",
+    "Crab Claws",
     "Crescendo",
-    "Crystal Arcade",
-    "Deathcap Trap",
-    "Deep Diner",
     "Deep End",
-    "Deep Forest",
-    "Divine Descent",
-    "Double Decker",
-    "Double Locking",
     "Double Swoosh",
-    "Dragonroll Reef",
-    "Dry Season",
     "Dueling Beetles",
-    "Dumpster Drive",
-    "Encirclement",
-    "Ends Meet",
-    "Flaring Phoenix",
-    "Flooded Mine",
     "Flowing Springs",
-    "Flute Chutes",
-    "Four Levels",
-    "Frosty tracks",
-    "Gem Fort",
-    "Goalies",
-    "Goalkeeper's Dream",
-    "Goldarm Gulch",
+    "Fortress Fall",
     "Grass Knot",
-    "Grassy Grave",
-    "Gunpowder Gangway",
-    "H for...",
-    "H is for Holiday",
     "Hard Rock Mine",
     "Healthy Middle Ground",
-    "Hideout",
     "Hot Potato",
-    "Hyacinth House",
     "Hyperspace",
-    "Icy ice park",
-    "Imposter Pathway",
-    "Infinite Doom",
-    "Insane Streamer",
     "Journey of a Thousand Steps",
-    "Kaboom Canyon",
-    "Kaiju Lake",
-    "Knockout Grounds",
-    "Konnakol",
-    "Last Stop",
     "Layer Cake",
-    "Lilygear Lake",
-    "Local Businesses",
-    "Maki Market",
-    "Minecart Madness",
-    "Mirage Arena",
-    "New Horizons",
-    "New Perspective",
     "No Good Deed",
     "Nutmeg",
-    "On a Roll",
-    "Opening Move",
+    "Open Business",
     "Out in the Open",
-    "Palette Hangout",
-    "Paperback Pond",
+    "Parallel Plays",
+    "Perpetual Motion",
     "Pinball Dreams",
     "Pinhole Punt",
-    "Pinned Down",
-    "Pocket Pass",
-    "Pocket Pleasures",
-    "Polar Park",
-    "Puck Palace",
     "Quintillion",
-    "Rastermind",
-    "Reverse Crossing",
-    "Ring of Fire",
-    "Rubbish Rampage",
-    "Rustic Arcade",
-    "Safe Zone",
-    "Serpentshrine Island",
-    "Shooting Star",
+    "Railroad Robbery",
+    "Siberian Stand Off",
     "Sidetrack",
     "Singed Earth",
-    "Sizzling Chambers",
-    "Slam Dunk",
-    "Slayer's Paradise",
     "Slippery Slap",
-    "Slippery road",
-    "Snake Pit",
-    "Snake Prairie",
     "Sneaky Fields",
-    "Spice Production",
-    "Spiraling Out",
-    "Starrburst",
-    "Steamrise Island",
-    "Stockpile Stadium",
-    "Storage Sector",
-    "Sunny Soccer",
-    "Super Beach",
-    "Super Center",
-    "Tax Evasion",
-    "Temple of Vroom",
-    "The Emptiness Machine",
-    "The Great Open",
-    "The Smackdome",
     "Tip Toe",
-    "Trickey",
-    "Triple Dribble",
-    "Triple-Double",
-    "Tuning Fork",
-    "Turnover",
-    "Undermine",
-    "WALKING ON HOT SAND",
-    "Wasabi Fortress",
-    "Watermelons",
     "nan"
   ],
   "game_mode": [
-    "Basket Brawl",
     "Bounty",
-    "Brawl Arena",
     "Brawl Ball",
     "Brawl Ball 5v5",
     "Brawl Hockey",
@@ -138,14 +46,7 @@
     "Hot Zone",
     "Knockout",
     "Knockout 5v5",
-    "Safe Blast",
-    "Shadow Smash",
-    "Soul Collector",
-    "Spirit Wars",
-    "Token Run",
-    "Unknown",
-    "Wipeout",
-    "Wipeout 5v5"
+    "Unknown"
   ],
   "environment": [
     "Airhockey",
@@ -155,36 +56,24 @@
     "Bbarena",
     "Bizarrecircus",
     "Bizarrecircusislandshowdown",
-    "Default",
     "Grassfield",
     "Hub",
-    "Iceislandshowdown",
     "Iceislandshowdownbb",
-    "Madevilislandshowdown",
     "Madevilmanor",
     "Mine",
-    "Mortuary",
-    "Mortuaryislandshowdown",
     "Pyramidquest",
-    "Retropolis",
-    "Rooftop",
     "Rumblejungle",
     "Scrapyard",
     "Stuntshowbb",
     "Unknown"
   ],
   "mode": [
-    "basketBrawl",
-    "botDrop",
     "bounty",
     "brawlBall",
     "gemGrab",
     "heist",
     "hotZone",
-    "knockout",
-    "siege",
-    "trophyThieves",
-    "wipeout"
+    "knockout"
   ],
   "team_a_brawler1": [
     "8-BIT",
@@ -286,8 +175,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_a_brawler2": [
     "8-BIT",
@@ -389,8 +277,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_a_brawler3": [
     "8-BIT",
@@ -492,8 +379,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_b_brawler1": [
     "8-BIT",
@@ -595,8 +481,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_b_brawler2": [
     "8-BIT",
@@ -698,8 +583,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_b_brawler3": [
     "8-BIT",
@@ -801,8 +685,7 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY",
-    "nan"
+    "ZIGGY"
   ],
   "team_a_brawler1_class": [
     "Artillery",
@@ -871,8 +754,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ],
   "team_a_brawler2_rarity": [
     "Common",
@@ -881,8 +763,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ],
   "team_a_brawler3_rarity": [
     "Common",
@@ -891,8 +772,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ],
   "team_b_brawler1_rarity": [
     "Common",
@@ -901,8 +781,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ],
   "team_b_brawler2_rarity": [
     "Common",
@@ -911,8 +790,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ],
   "team_b_brawler3_rarity": [
     "Common",
@@ -921,7 +799,6 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary",
-    "Unknown"
+    "Ultra Legendary"
   ]
 }
