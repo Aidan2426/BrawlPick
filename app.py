@@ -119,8 +119,29 @@ display_to_map = {
     for _, row in maps_df_filtered.iterrows()
 }
 
-map_mode = dict(zip(maps_df["map_name"].str.upper(), maps_df["game_mode_name"]))
-map_env  = dict(zip(maps_df["map_name"].str.upper(), maps_df["environment_name"]))
+map_mode      = dict(zip(maps_df["map_name"].str.upper(), maps_df["game_mode_name"]))
+map_env       = dict(zip(maps_df["map_name"].str.upper(), maps_df["environment_name"]))
+map_image_url = dict(zip(maps_df["map_name"], maps_df["image_url"]))
+
+# Mode icon emoji
+MODE_ICONS = {
+    "Gem Grab":  "💎",
+    "Brawl Ball": "⚽",
+    "Heist":     "💰",
+    "Bounty":    "⭐",
+    "Knockout":  "💀",
+    "Hot Zone":  "🔥",
+}
+
+# Mode color accents
+MODE_COLORS = {
+    "Gem Grab":  "#d852ff",
+    "Brawl Ball": "#48d848",
+    "Heist":     "#f0a830",
+    "Bounty":    "#24d6ff",
+    "Knockout":  "#ff4444",
+    "Hot Zone":  "#ff8800",
+}
 
 # ─────────────────────────────────────────────
 # Session state
@@ -335,56 +356,82 @@ def _rec_cards_html(recs):
 st.markdown(f'<h1 style="text-align:center;margin-bottom:0;"><img src="data:image/png;base64,{_logo_b64}" style="height:48px;vertical-align:middle;margin-right:10px;">BRAWLPICK</h1>', unsafe_allow_html=True)
 st.markdown(f'<p style="text-align:center;color:rgba(255,255,255,0.45);font-size:12px;margin-top:2px;">{meta["n_train"]:,} ranked matches · {meta["cv_accuracy_mean"]:.0%} CV accuracy</p>', unsafe_allow_html=True)
 
-# Map bar
-col_map, col_lock, col_reset = st.columns([3, 1, 1])
-with col_map:
-    current_display = next(
-        (k for k, v in display_to_map.items() if v == st.session_state.map_name),
-        map_display_options[0]
-    )
-    if st.session_state.map_locked:
-        mode_label = map_mode.get(st.session_state.map_name.upper(), "")
-        st.markdown(f"""
-        <div style="background:rgba(15,30,80,0.9);border:2px solid rgba(255,227,53,0.35);border-radius:8px;padding:10px 16px;">
-            <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:2px;">{mode_label.upper()}</div>
-            <div style="color:#FFE135;font-size:18px;">{st.session_state.map_name}</div>
-        </div>
-        """, unsafe_allow_html=True)
-    else:
-        selected_display = st.selectbox(
-            f"Map ({len(map_display_options)} maps with 10+ matches)",
-            map_display_options,
-            index=map_display_options.index(current_display),
-        )
-        selected_map = display_to_map[selected_display]
-        if selected_map != st.session_state.map_name:
-            st.session_state.map_name = selected_map
+# ── Map picker / locked bar ────────────────────────────────────────────────
 
-with col_lock:
-    st.write("")
-    st.write("")
-    if st.session_state.map_locked:
+if st.session_state.map_locked:
+    # Locked state: show selected map + action buttons
+    mode_label  = map_mode.get(st.session_state.map_name.upper(), "")
+    mode_color  = MODE_COLORS.get(mode_label, "#FFE135")
+    mode_icon   = MODE_ICONS.get(mode_label, "🗺")
+    img_url     = map_image_url.get(st.session_state.map_name, "")
+    img_tag     = f'<img src="{img_url}" style="height:70px;border-radius:8px;object-fit:cover;margin-right:16px;">' if img_url else ""
+    st.markdown(f"""
+    <div style="display:flex;align-items:center;background:rgba(15,30,80,0.85);
+                border:2px solid {mode_color};border-radius:12px;padding:10px 18px;margin-bottom:8px;">
+        {img_tag}
+        <div>
+            <div style="color:{mode_color};font-size:11px;letter-spacing:2px;">{mode_icon} {mode_label.upper()}</div>
+            <div style="color:#FFE135;font-size:20px;font-weight:bold;">{st.session_state.map_name}</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    col_change, col_reset = st.columns([1, 1])
+    with col_change:
         if st.button("🔓 Change Map", use_container_width=True):
             st.session_state.map_locked = False
             st.session_state.draft = [None] * 6
             st.session_state.rec_history = []
             st.rerun()
-    else:
-        if st.button("🔒 Lock Map", use_container_width=True, type="primary"):
-            st.session_state.map_locked = True
+    with col_reset:
+        if st.button("↺ Reset Draft", use_container_width=True):
+            st.session_state.draft = [None] * 6
+            st.session_state.rec_history = []
             st.rerun()
 
-with col_reset:
-    st.write("")
-    st.write("")
-    if st.button("Reset Draft", use_container_width=True):
-        st.session_state.draft = [None] * 6
-        st.session_state.rec_history = []
-        st.session_state.map_locked = False
-        st.rerun()
+else:
+    # Map picker grid grouped by mode
+    # Add CSS for map card hover effect
+    st.markdown("""
+    <style>
+    .map-card { cursor:pointer; transition:transform 0.15s; }
+    .map-card:hover { transform:scale(1.05); }
+    </style>
+    """, unsafe_allow_html=True)
 
-if not st.session_state.map_locked:
-    st.info("Select a map and click **Lock Map** to start the draft.")
+    st.markdown('<p style="color:rgba(255,255,255,0.6);font-size:13px;margin-bottom:4px;">SELECT A MAP TO START THE DRAFT</p>', unsafe_allow_html=True)
+
+    # Group filtered maps by mode
+    modes_order = ["Gem Grab", "Brawl Ball", "Heist", "Bounty", "Knockout", "Hot Zone"]
+    for mode in modes_order:
+        mode_maps = maps_df_filtered[maps_df_filtered["game_mode_name"] == mode]
+        if mode_maps.empty:
+            continue
+        mode_color = MODE_COLORS.get(mode, "#ffffff")
+        mode_icon  = MODE_ICONS.get(mode, "🗺")
+        st.markdown(f'<div style="color:{mode_color};font-size:13px;letter-spacing:3px;margin:10px 0 6px;">{mode_icon} {mode.upper()}</div>', unsafe_allow_html=True)
+
+        cols = st.columns(len(mode_maps))
+        for col, (_, mrow) in zip(cols, mode_maps.iterrows()):
+            map_name = mrow["map_name"]
+            img_url  = map_image_url.get(map_name, "")
+            n_games  = int(map_counts.get(map_name, 0))
+            is_selected = (map_name == st.session_state.map_name)
+            border = f"3px solid {mode_color}" if is_selected else "2px solid rgba(255,255,255,0.12)"
+            bg     = f"rgba(255,255,255,0.08)" if is_selected else "rgba(255,255,255,0.02)"
+
+            with col:
+                if img_url:
+                    st.markdown(f'<img src="{img_url}" style="width:100%;border-radius:8px;border:{border};display:block;">', unsafe_allow_html=True)
+                st.markdown(f'<div style="color:{"#FFE135" if is_selected else "white"};font-size:11px;text-align:center;margin-top:4px;margin-bottom:2px;">{map_name}</div>', unsafe_allow_html=True)
+                st.markdown(f'<div style="color:rgba(255,255,255,0.4);font-size:10px;text-align:center;margin-bottom:6px;">{n_games} games</div>', unsafe_allow_html=True)
+                if st.button("Select", key=f"map_{map_name}", use_container_width=True,
+                             type="primary" if is_selected else "secondary"):
+                    st.session_state.map_name = map_name
+                    st.session_state.map_locked = True
+                    st.session_state.draft = [None] * 6
+                    st.session_state.rec_history = []
+                    st.rerun()
+
     st.stop()
 
 # Draft board
