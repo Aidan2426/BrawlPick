@@ -4,7 +4,7 @@ Snake draft format: A, B, B, A, A, B
 """
 
 import json
-import pickle
+import joblib
 import random
 import warnings
 from pathlib import Path
@@ -16,6 +16,15 @@ import streamlit as st
 warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="BrawlPick", page_icon="logo.jpg", layout="wide")
+
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nougat&display=swap');
+html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, div, span, button, label, input, select, textarea {
+    font-family: 'Nougat', sans-serif !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # Snake draft order
@@ -35,8 +44,7 @@ BRAWLER_SLOTS = [
 
 @st.cache_resource
 def load_model():
-    with open("model/rf_model.pkl", "rb") as f:
-        model = pickle.load(f)
+    model = joblib.load("model/rf_model.pkl")
     with open("model/model_meta.json") as f:
         meta = json.load(f)
     return model, meta

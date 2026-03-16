@@ -12,7 +12,6 @@ Usage: python train_model.py
 """
 
 import json
-import pickle
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -236,8 +235,8 @@ model_meta = {
     "feature_importances":    importances.to_dict(),
 }
 
-with open(MODEL_DIR / "rf_model.pkl", "wb") as f:
-    pickle.dump(rf, f)
+import joblib
+joblib.dump(rf, MODEL_DIR / "rf_model.pkl", compress=3)
 
 with open(MODEL_DIR / "model_meta.json", "w") as f:
     json.dump(model_meta, f, indent=2)
