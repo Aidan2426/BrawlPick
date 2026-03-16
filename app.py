@@ -421,7 +421,7 @@ else:
 
             with col:
                 if img_url:
-                    st.markdown(f'<img src="{img_url}" style="width:100%;border-radius:8px;border:{border};display:block;">', unsafe_allow_html=True)
+                    st.markdown(f'<div style="width:100%;height:130px;background:rgba(0,0,0,0.3);border-radius:8px;border:{border};overflow:hidden;display:flex;align-items:center;justify-content:center;"><img src="{img_url}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></div>', unsafe_allow_html=True)
                 st.markdown(f'<div style="color:{"#FFE135" if is_selected else "white"};font-size:11px;text-align:center;margin-top:4px;margin-bottom:2px;">{map_name}</div>', unsafe_allow_html=True)
                 st.markdown(f'<div style="color:rgba(255,255,255,0.4);font-size:10px;text-align:center;margin-bottom:6px;">{n_games} games</div>', unsafe_allow_html=True)
                 if st.button("Select", key=f"map_{map_name}", use_container_width=True,
