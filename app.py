@@ -15,7 +15,7 @@ import streamlit as st
 
 warnings.filterwarnings("ignore")
 
-st.set_page_config(page_title="BrawlPick", page_icon="🎮", layout="wide")
+st.set_page_config(page_title="BrawlPick", page_icon="logo.jpg", layout="wide")
 
 # ─────────────────────────────────────────────
 # Snake draft order
@@ -71,8 +71,9 @@ all_brawlers = sorted(brawler_win_rates.keys())
 brawlers_df["name_upper"] = brawlers_df["brawler_name"].str.upper()
 brawler_icons = dict(zip(brawlers_df["name_upper"], brawlers_df["icon_url"]))
 
-# Map dropdown — only maps with actual match data, grouped by game mode
-maps_with_data = set(train_df["map"].dropna().str.strip().unique())
+# Map dropdown — only maps with at least 10 matches in training data
+map_counts = train_df["map"].dropna().str.strip().value_counts()
+maps_with_data = set(map_counts[map_counts >= 10].index)
 maps_df_filtered = maps_df[maps_df["map_name"].isin(maps_with_data)].copy()
 maps_df_filtered = maps_df_filtered.sort_values(["game_mode_name", "map_name"])
 map_display_options = [
@@ -102,6 +103,8 @@ if "map_name" not in st.session_state:
     st.session_state.map_name = display_to_map[map_display_options[0]]
 if "rec_history" not in st.session_state:
     st.session_state.rec_history = []
+if "map_locked" not in st.session_state:
+    st.session_state.map_locked = False
 
 # ─────────────────────────────────────────────
 # Draft helpers
@@ -202,20 +205,38 @@ def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = 10, n
 st.title("🎮 BrawlPick")
 st.caption(f"Draft recommender · {meta['n_train']:,} ranked matches · {meta['cv_accuracy_mean']:.0%} CV accuracy")
 
-col_map, col_reset = st.columns([3, 1])
+col_map, col_lock, col_reset = st.columns([3, 1, 1])
 with col_map:
     current_display = next(
         (k for k, v in display_to_map.items() if v == st.session_state.map_name),
         map_display_options[0]
     )
-    selected_display = st.selectbox(
-        f"Map ({len(map_display_options)} maps with match data)",
-        map_display_options,
-        index=map_display_options.index(current_display),
-    )
-    selected_map = display_to_map[selected_display]
-    if selected_map != st.session_state.map_name:
-        st.session_state.map_name = selected_map
+    if st.session_state.map_locked:
+        st.markdown(f"**Map:** {current_display}")
+        st.caption("Map is locked for this draft.")
+    else:
+        selected_display = st.selectbox(
+            f"Map ({len(map_display_options)} maps with 10+ matches)",
+            map_display_options,
+            index=map_display_options.index(current_display),
+        )
+        selected_map = display_to_map[selected_display]
+        if selected_map != st.session_state.map_name:
+            st.session_state.map_name = selected_map
+
+with col_lock:
+    st.write("")
+    st.write("")
+    if st.session_state.map_locked:
+        if st.button("🔓 Change Map", use_container_width=True):
+            st.session_state.map_locked = False
+            st.session_state.draft = [None] * 6
+            st.session_state.rec_history = []
+            st.rerun()
+    else:
+        if st.button("🔒 Lock Map", use_container_width=True, type="primary"):
+            st.session_state.map_locked = True
+            st.rerun()
 
 with col_reset:
     st.write("")
@@ -223,9 +244,14 @@ with col_reset:
     if st.button("Reset Draft", use_container_width=True):
         st.session_state.draft = [None] * 6
         st.session_state.rec_history = []
+        st.session_state.map_locked = False
         st.rerun()
 
 st.divider()
+
+if not st.session_state.map_locked:
+    st.info("Select a map and click **Lock Map** to start the draft.")
+    st.stop()
 
 # ─────────────────────────────────────────────
 # Draft board
@@ -347,19 +373,24 @@ else:
             with c2:
                 st.write(b.title())
 
-    with st.spinner("Calculating final win probability..."):
-        rows = [build_row_full(st.session_state.map_name, my_team[:3], enemy_team[:3])]
-        X    = pd.DataFrame(rows)[feature_cols]
-        prob = model.predict_proba(X)[0][1]
+    my_avg    = sum(encode_brawler(b) for b in my_team)    / len(my_team)
+    enemy_avg = sum(encode_brawler(b) for b in enemy_team) / len(enemy_team)
+    edge = my_avg - enemy_avg
 
     st.divider()
-    st.metric("Estimated Win Probability (Your Team)", f"{prob:.1%}")
-    if prob >= 0.55:
-        st.success("Strong draft! You have a composition advantage.")
-    elif prob >= 0.50:
+    m1, m2 = st.columns(2)
+    m1.metric("Your Team Avg Win Rate",    f"{my_avg:.1%}")
+    m2.metric("Enemy Team Avg Win Rate",   f"{enemy_avg:.1%}")
+    st.caption("Based on each brawler's historical win rate across all matches in the dataset.")
+
+    if edge >= 0.03:
+        st.success("Strong draft! Your brawlers have a clear historical advantage.")
+    elif edge >= 0.01:
+        st.info("Slight edge to your team.")
+    elif edge >= -0.01:
         st.info("Roughly even draft.")
     else:
-        st.warning("Tough matchup — the enemy draft has the edge.")
+        st.warning("Tough matchup — the enemy's brawlers have the historical edge.")
 
 # ─────────────────────────────────────────────
 # Recommendation history
