@@ -78,11 +78,12 @@ def load_data():
 model, meta = load_model()
 brawlers_df, maps_df, train_df = load_data()
 
-feature_cols          = meta["feature_cols"]
-brawler_win_rates     = meta["brawler_win_rates"]        # global fallback
-brawler_map_win_rates = meta.get("brawler_map_win_rates", {})  # map-specific (primary)
-brawler_global_mean   = meta["brawler_global_mean"]
-label_encodings       = meta["label_encodings"]
+feature_cols            = meta["feature_cols"]
+brawler_win_rates       = meta["brawler_win_rates"]
+brawler_map_win_rates   = meta.get("brawler_map_win_rates", {})
+brawler_map_game_counts = meta.get("brawler_map_game_counts", {})
+brawler_global_mean     = meta["brawler_global_mean"]
+label_encodings         = meta["label_encodings"]
 
 # Label encoding lookup: col → {value: int}
 label_encoders = {
@@ -408,11 +409,22 @@ if next_slot is not None:
         st.markdown(_rec_cards_html(recs.head(10)), unsafe_allow_html=True)
 
         with st.expander("Full rankings"):
-            table = recs.copy()
+            map_upper = st.session_state.map_name.upper()
+            rows = []
+            for _, row in recs.iterrows():
+                b   = row["brawler"]
+                key = f"{map_upper}|{b.upper()}"
+                map_wr    = brawler_map_win_rates.get(key)
+                map_games = brawler_map_game_counts.get(key)
+                global_wr = brawler_win_rates.get(b, brawler_global_mean)
+                rows.append({
+                    "Brawler":           b.title(),
+                    "Map Win Rate":      f"{map_wr:.1%} ({map_games} games)" if map_wr is not None else "— no map data",
+                    "Global Win Rate":   f"{global_wr:.1%}",
+                })
+            table = pd.DataFrame(rows)
             table.index = range(1, len(table) + 1)
-            table["Brawler"]  = table["brawler"].str.title()
-            table["Win Rate"] = table["win_prob"].map(lambda x: f"{x:.1%}")
-            st.dataframe(table[["Brawler", "Win Rate"]], use_container_width=True)
+            st.dataframe(table, use_container_width=True)
         st.write("")
 
         col_pick, col_btn = st.columns([3, 1])

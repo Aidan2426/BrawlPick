@@ -144,7 +144,8 @@ valid      = map_counts[map_counts >= MIN_MAP_APPEARANCES].index
 map_rates  = map_rates[map_rates.index.isin(valid)]
 
 # Store as "MAP|BRAWLER" → win_rate for easy JSON serialisation
-brawler_map_win_rates = {f"{m.upper()}|{b.upper()}": float(wr) for (m, b), wr in map_rates.items()}
+brawler_map_win_rates  = {f"{m.upper()}|{b.upper()}": float(wr)  for (m, b), wr  in map_rates.items()}
+brawler_map_game_counts = {f"{m.upper()}|{b.upper()}": int(cnt) for (m, b), cnt in map_counts[map_counts >= MIN_MAP_APPEARANCES].items()}
 
 print(f"  Map-specific: {len(brawler_map_win_rates)} (map, brawler) pairs "
       f"with ≥{MIN_MAP_APPEARANCES} games")
@@ -255,7 +256,8 @@ model_meta = {
     "feature_cols":           feature_cols,
     "target":                 TARGET,
     "brawler_win_rates":      brawler_win_rates,       # global fallback
-    "brawler_map_win_rates":  brawler_map_win_rates,   # map-specific (primary)
+    "brawler_map_win_rates":   brawler_map_win_rates,    # map-specific (primary)
+    "brawler_map_game_counts": brawler_map_game_counts, # games behind each map rate
     "brawler_global_mean":    global_mean,
     "label_encodings":        label_encodings,      # for non-brawler categoricals
     "test_accuracy":          round(test_acc, 4),
