@@ -36,7 +36,8 @@ st.markdown(f"""
     font-family: 'Nougat';
     src: url('data:font/truetype;base64,{_font_b64}') format('truetype');
 }}
-html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, div, span, button, label, input, select, textarea {{
+html, body, h1, h2, h3, h4, h5, h6, p, button, label, input, select, textarea,
+.stMarkdown, .stMetric, .stButton, .stSelectbox, .stDataFrame, .stExpander p {{
     font-family: 'Nougat', sans-serif !important;
 }}
 </style>
@@ -155,7 +156,7 @@ def picked_brawlers():
 
 def encode_brawler(brawler: str, map_name: str = "") -> float:
     """Map-specific target encode, falling back to global win rate."""
-    key = f"{map_name}|{brawler.upper()}"
+    key = f"{map_name.upper()}|{brawler.upper()}"
     if key in brawler_map_win_rates:
         return brawler_map_win_rates[key]
     return brawler_win_rates.get(brawler.upper(), brawler_global_mean)
@@ -203,7 +204,7 @@ def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = None,
     if not my_team and not enemy_team:
         scores = []
         for c in candidates:
-            key = f"{map_name}|{c}"
+            key = f"{map_name.upper()}|{c.upper()}"
             wr  = brawler_map_win_rates.get(key, brawler_win_rates.get(c, brawler_global_mean))
             scores.append({"brawler": c, "win_prob": wr})
         df = pd.DataFrame(scores).sort_values("win_prob", ascending=False).reset_index(drop=True)

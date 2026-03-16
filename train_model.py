@@ -144,7 +144,7 @@ valid      = map_counts[map_counts >= MIN_MAP_APPEARANCES].index
 map_rates  = map_rates[map_rates.index.isin(valid)]
 
 # Store as "MAP|BRAWLER" → win_rate for easy JSON serialisation
-brawler_map_win_rates = {f"{m}|{b}": float(wr) for (m, b), wr in map_rates.items()}
+brawler_map_win_rates = {f"{m.upper()}|{b.upper()}": float(wr) for (m, b), wr in map_rates.items()}
 
 print(f"  Map-specific: {len(brawler_map_win_rates)} (map, brawler) pairs "
       f"with ≥{MIN_MAP_APPEARANCES} games")
