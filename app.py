@@ -406,19 +406,12 @@ if next_slot is not None:
 
         st.markdown(_rec_cards_html(recs.head(10)), unsafe_allow_html=True)
 
-        with st.expander(f"See all {len(recs)} brawlers ranked"):
-            for _, row in recs.iterrows():
-                bar_w = int(row["win_prob"] * 200)
-                st.markdown(
-                    f'<div style="display:flex;align-items:center;gap:10px;margin:2px 0;">'
-                    f'<span style="color:white;width:26px;text-align:right;font-size:12px;">{int(row.name)+1}.</span>'
-                    f'<span style="color:white;width:130px;font-size:13px;">{row["brawler"].title()}</span>'
-                    f'<div style="background:#1a2a5e;border-radius:4px;height:14px;width:200px;">'
-                    f'<div style="background:#FFE135;height:100%;width:{bar_w}px;border-radius:4px;"></div></div>'
-                    f'<span style="color:#FFE135;font-size:12px;width:45px;">{row["win_prob"]:.1%}</span>'
-                    f'</div>',
-                    unsafe_allow_html=True
-                )
+        with st.expander("Full rankings"):
+            table = recs.copy()
+            table.index = range(1, len(table) + 1)
+            table["Brawler"]  = table["brawler"].str.title()
+            table["Win Rate"] = table["win_prob"].map(lambda x: f"{x:.1%}")
+            st.dataframe(table[["Brawler", "Win Rate"]], use_container_width=True)
         st.write("")
 
         col_pick, col_btn = st.columns([3, 1])
