@@ -3,10 +3,12 @@ Brawl Stars - Random Forest Model Training
 Trains a win-prediction model on training_data.csv
 
 Encoding strategy:
-  - Brawler slots: TARGET ENCODING (brawler → its historical win rate)
-    This gives the RF meaningful numeric splits instead of arbitrary alphabetical integers.
-  - map, game_mode, environment, class, rarity: label encoding (ordinal is fine here)
-  - star_powers_count, gadgets_count: numeric, used as-is
+  - Brawler slots: MAP-SPECIFIC TARGET ENCODING
+    Each brawler is encoded as their win rate on the specific map being played.
+    Falls back to global win rate when fewer than MIN_MAP_APPEARANCES games exist
+    for that (map, brawler) pair on the training set.
+  - map, game_mode: label encoding
+  - All other features dropped (class, rarity, gadgets, etc.)
 
 Usage: python train_model.py
 """
@@ -91,8 +93,11 @@ print(f"\nTrain: {len(X_train_raw):,}  |  Test: {len(X_test_raw):,}")
 # - team_b slots: win = team_b_win = 1 - team_a_win
 # ─────────────────────────────────────────────
 
+MIN_MAP_APPEARANCES = 15  # min (map, brawler) games to use map-specific rate
+
 print("\nComputing brawler target encodings (training set only)...")
 
+# ── Global win rates (fallback) ──────────────────────────────────────────────
 appearances = []
 for col in BRAWLER_SLOTS:
     is_team_a = "team_a" in col
@@ -112,29 +117,54 @@ combined = combined[
 brawler_win_rates = combined.groupby("brawler")["win"].mean().to_dict()
 global_mean = float(combined["win"].mean())
 
-print(f"  Encoded {len(brawler_win_rates)} brawlers")
-print(f"  Global mean win rate: {global_mean:.3f}")
+print(f"  Global: {len(brawler_win_rates)} brawlers, mean win rate {global_mean:.3f}")
 
-# Print top/bottom 10 brawlers by win rate (sanity check)
-wr_series = pd.Series(brawler_win_rates).sort_values(ascending=False)
-print(f"\n  Top 10 brawlers by win rate:")
-for b, wr in wr_series.head(10).items():
-    print(f"    {b:<20} {wr:.1%}")
-print(f"\n  Bottom 10 brawlers by win rate:")
-for b, wr in wr_series.tail(10).items():
-    print(f"    {b:<20} {wr:.1%}")
+# ── Map-specific win rates ────────────────────────────────────────────────────
+map_appearances = []
+for col in BRAWLER_SLOTS:
+    is_team_a = "team_a" in col
+    tmp = pd.DataFrame({
+        "map":     X_train_raw["map"].values,
+        "brawler": X_train_raw[col].values,
+        "win":     y_train.values if is_team_a else (1 - y_train.values),
+    })
+    map_appearances.append(tmp)
+
+map_combined = pd.concat(map_appearances, ignore_index=True)
+map_combined = map_combined[
+    map_combined["brawler"].notna() &
+    (map_combined["brawler"] != "") &
+    (map_combined["brawler"] != "UNKNOWN") &
+    map_combined["map"].notna()
+]
+
+map_counts = map_combined.groupby(["map", "brawler"])["win"].count()
+map_rates  = map_combined.groupby(["map", "brawler"])["win"].mean()
+valid      = map_counts[map_counts >= MIN_MAP_APPEARANCES].index
+map_rates  = map_rates[map_rates.index.isin(valid)]
+
+# Store as "MAP|BRAWLER" → win_rate for easy JSON serialisation
+brawler_map_win_rates = {f"{m}|{b}": float(wr) for (m, b), wr in map_rates.items()}
+
+print(f"  Map-specific: {len(brawler_map_win_rates)} (map, brawler) pairs "
+      f"with ≥{MIN_MAP_APPEARANCES} games")
 
 
-def apply_brawler_target_encoding(X, brawler_win_rates, global_mean):
-    X = X.copy()
+def apply_brawler_target_encoding(X_raw, brawler_win_rates, brawler_map_win_rates, global_mean):
+    """Encode each brawler slot as their map-specific win rate, falling back to global."""
+    X = X_raw.copy()
+    map_col = X["map"].astype(str) if "map" in X.columns else pd.Series([""] * len(X))
     for col in BRAWLER_SLOTS:
         if col in X.columns:
-            X[col] = X[col].map(brawler_win_rates).fillna(global_mean)
+            keys        = map_col + "|" + X[col].astype(str)
+            map_encoded = keys.map(brawler_map_win_rates)
+            global_enc  = X[col].map(brawler_win_rates).fillna(global_mean)
+            X[col]      = map_encoded.where(map_encoded.notna(), global_enc)
     return X
 
 
-X_train = apply_brawler_target_encoding(X_train_raw, brawler_win_rates, global_mean)
-X_test  = apply_brawler_target_encoding(X_test_raw,  brawler_win_rates, global_mean)
+X_train = apply_brawler_target_encoding(X_train_raw, brawler_win_rates, brawler_map_win_rates, global_mean)
+X_test  = apply_brawler_target_encoding(X_test_raw,  brawler_win_rates, brawler_map_win_rates, global_mean)
 
 # ─────────────────────────────────────────────
 # Label encoding for remaining categorical columns
@@ -224,7 +254,8 @@ plt.close()
 model_meta = {
     "feature_cols":           feature_cols,
     "target":                 TARGET,
-    "brawler_win_rates":      brawler_win_rates,   # for target encoding at inference
+    "brawler_win_rates":      brawler_win_rates,       # global fallback
+    "brawler_map_win_rates":  brawler_map_win_rates,   # map-specific (primary)
     "brawler_global_mean":    global_mean,
     "label_encodings":        label_encodings,      # for non-brawler categoricals
     "test_accuracy":          round(test_acc, 4),

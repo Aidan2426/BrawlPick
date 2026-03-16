@@ -15,7 +15,7 @@ import streamlit as st
 
 warnings.filterwarnings("ignore")
 
-st.set_page_config(page_title="BrawlPick", page_icon="logo.jpg", layout="wide")
+st.set_page_config(page_title="BrawlPick", page_icon="Brawl Stars Logo.png", layout="wide")
 
 def _load_font_b64(path: str) -> str:
     import base64
@@ -23,6 +23,13 @@ def _load_font_b64(path: str) -> str:
         return base64.b64encode(f.read()).decode()
 
 _font_b64 = _load_font_b64("Nougat-ExtraBlack.ttf")
+
+def _load_img_b64(path: str) -> str:
+    import base64
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+_logo_b64 = _load_img_b64("Brawl Stars Logo.png")
 st.markdown(f"""
 <style>
 @font-face {{
@@ -70,10 +77,11 @@ def load_data():
 model, meta = load_model()
 brawlers_df, maps_df, train_df = load_data()
 
-feature_cols      = meta["feature_cols"]
-brawler_win_rates = meta["brawler_win_rates"]       # brawler → win rate (target encoding)
-brawler_global_mean = meta["brawler_global_mean"]   # fallback for unknown brawlers
-label_encodings   = meta["label_encodings"]         # col → list of classes
+feature_cols          = meta["feature_cols"]
+brawler_win_rates     = meta["brawler_win_rates"]        # global fallback
+brawler_map_win_rates = meta.get("brawler_map_win_rates", {})  # map-specific (primary)
+brawler_global_mean   = meta["brawler_global_mean"]
+label_encodings       = meta["label_encodings"]
 
 # Label encoding lookup: col → {value: int}
 label_encoders = {
@@ -145,8 +153,11 @@ def picked_brawlers():
 # Encoding helpers
 # ─────────────────────────────────────────────
 
-def encode_brawler(brawler: str) -> float:
-    """Target encode: return this brawler's historical win rate."""
+def encode_brawler(brawler: str, map_name: str = "") -> float:
+    """Map-specific target encode, falling back to global win rate."""
+    key = f"{map_name}|{brawler.upper()}"
+    if key in brawler_map_win_rates:
+        return brawler_map_win_rates[key]
     return brawler_win_rates.get(brawler.upper(), brawler_global_mean)
 
 def encode_label(col: str, value: str) -> int:
@@ -165,9 +176,9 @@ def build_row_full(map_name: str, my_picks_3: list, enemy_picks_3: list) -> dict
         "game_mode": encode_label("game_mode", map_mode.get(map_name.upper(), "Unknown")),
     }
     for i, b in enumerate(my_picks_3, 1):
-        row[f"team_a_brawler{i}"] = encode_brawler(b)
+        row[f"team_a_brawler{i}"] = encode_brawler(b, map_name)
     for i, b in enumerate(enemy_picks_3, 1):
-        row[f"team_b_brawler{i}"] = encode_brawler(b)
+        row[f"team_b_brawler{i}"] = encode_brawler(b, map_name)
     return row
 
 
@@ -307,7 +318,7 @@ def _rec_cards_html(recs):
 # UI
 # ─────────────────────────────────────────────
 
-st.markdown('<h1 style="text-align:center;margin-bottom:0;">💀 BRAWLPICK</h1>', unsafe_allow_html=True)
+st.markdown(f'<h1 style="text-align:center;margin-bottom:0;"><img src="data:image/png;base64,{_logo_b64}" style="height:48px;vertical-align:middle;margin-right:10px;">BRAWLPICK</h1>', unsafe_allow_html=True)
 st.markdown(f'<p style="text-align:center;color:rgba(255,255,255,0.45);font-size:12px;margin-top:2px;">{meta["n_train"]:,} ranked matches · {meta["cv_accuracy_mean"]:.0%} CV accuracy</p>', unsafe_allow_html=True)
 
 # Map bar
