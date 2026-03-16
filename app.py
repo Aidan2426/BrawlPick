@@ -17,12 +17,21 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="BrawlPick", page_icon="logo.jpg", layout="wide")
 
-st.markdown("""
+def _load_font_b64(path: str) -> str:
+    import base64
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+_font_b64 = _load_font_b64("Nougat-ExtraBlack.ttf")
+st.markdown(f"""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nougat&display=swap');
-html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, div, span, button, label, input, select, textarea {
+@font-face {{
+    font-family: 'Nougat';
+    src: url('data:font/truetype;base64,{_font_b64}') format('truetype');
+}}
+html, body, [class*="css"], h1, h2, h3, h4, h5, h6, p, div, span, button, label, input, select, textarea {{
     font-family: 'Nougat', sans-serif !important;
-}
+}}
 </style>
 """, unsafe_allow_html=True)
 
