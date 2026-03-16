@@ -216,12 +216,101 @@ def recommend(map_name: str, my_team: list, enemy_team: list, top_n: int = 10, n
     )
 
 # ─────────────────────────────────────────────
+# Theme
+# ─────────────────────────────────────────────
+
+st.markdown("""
+<style>
+.stApp { background: #0d1b3e !important; }
+.main .block-container { background: transparent !important; padding-top: 0.5rem; }
+[data-testid="stSidebar"] { background: #0a1530 !important; }
+[data-testid="stSidebar"] p, [data-testid="stSidebar"] label { color: rgba(255,255,255,0.85) !important; }
+h1, h2, h3 { color: #FFE135 !important; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); letter-spacing: 1px; }
+p, .stMarkdown p { color: rgba(255,255,255,0.9) !important; }
+.stCaption p { color: rgba(255,255,255,0.5) !important; }
+.stMetric label { color: rgba(255,255,255,0.7) !important; }
+.stMetric [data-testid="stMetricValue"] { color: #FFE135 !important; }
+.stButton > button[kind="primary"] {
+    background: #FFE135 !important; color: #0d1b3e !important;
+    border: none !important; font-weight: bold; border-radius: 8px;
+}
+.stButton > button {
+    background: #1e3a7a !important; color: white !important;
+    border: 1px solid #3a5a9a !important; border-radius: 8px;
+}
+.stSelectbox label { color: white !important; }
+[data-baseweb="select"] { background: #1a2a5e !important; border-color: #3a5a9a !important; }
+.stDivider { border-color: rgba(255,227,53,0.3) !important; }
+.stInfo    { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; }
+.stSuccess { background: rgba(50,200,50,0.1) !important; }
+.stWarning { background: rgba(255,150,0,0.1) !important; }
+</style>
+""", unsafe_allow_html=True)
+
+# ─────────────────────────────────────────────
+# HTML helpers
+# ─────────────────────────────────────────────
+
+def _slot_html(brawler, is_next=False, team="A"):
+    border = "#FFE135" if is_next else ("#5b9bd5" if team == "A" else "#d55b5b")
+    dash   = "solid" if is_next else "dashed"
+    if brawler:
+        url = brawler_icons.get(brawler.upper(), "")
+        if url:
+            img = f'<img src="{url}" style="width:80px;height:80px;border-radius:50%;border:3px solid {border};object-fit:cover;display:block;">'
+        else:
+            img = f'<div style="width:80px;height:80px;border-radius:50%;border:3px solid {border};background:#1a2a5e;display:flex;align-items:center;justify-content:center;"><span style="color:white;font-size:9px;text-align:center;">{brawler.title()}</span></div>'
+        return f'<div style="text-align:center;display:inline-block;margin:0 8px;">{img}<div style="color:white;font-size:11px;margin-top:4px;">{brawler.title()}</div></div>'
+    else:
+        bc    = "#FFE135" if is_next else "rgba(255,255,255,0.25)"
+        inner = "▼" if is_next else "?"
+        label = "NOW" if is_next else "EMPTY"
+        return f'<div style="text-align:center;display:inline-block;margin:0 8px;"><div style="width:80px;height:80px;border-radius:50%;border:3px {dash} {bc};background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;"><span style="color:{bc};font-size:22px;">{inner}</span></div><div style="color:rgba(255,255,255,0.35);font-size:10px;margin-top:4px;">{label}</div></div>'
+
+def _draft_board_html(draft, next_slot):
+    # Snake order: A=0,3,4  B=1,2,5
+    blue_html = "".join(_slot_html(draft[i], i == next_slot, "A") for i in [0, 3, 4])
+    red_html  = "".join(_slot_html(draft[i], i == next_slot, "B") for i in [1, 2, 5])
+    return f"""
+    <div style="display:flex;align-items:center;gap:12px;margin:12px 0;">
+        <div style="flex:1;background:rgba(30,90,180,0.2);border:2px solid rgba(91,155,213,0.5);border-radius:14px;padding:16px 12px;">
+            <div style="color:#5b9bd5;font-size:13px;letter-spacing:3px;margin-bottom:10px;">BLUE TEAM</div>
+            <div style="display:flex;justify-content:center;">{blue_html}</div>
+        </div>
+        <div style="padding:0 8px;flex-shrink:0;text-align:center;">
+            <div style="color:#FFE135;font-size:42px;font-weight:bold;text-shadow:0 0 20px rgba(255,227,53,0.5);">VS</div>
+        </div>
+        <div style="flex:1;background:rgba(180,30,30,0.2);border:2px solid rgba(213,91,91,0.5);border-radius:14px;padding:16px 12px;">
+            <div style="color:#d55b5b;font-size:13px;letter-spacing:3px;margin-bottom:10px;">RED TEAM</div>
+            <div style="display:flex;justify-content:center;">{red_html}</div>
+        </div>
+    </div>
+    """
+
+def _rec_cards_html(recs):
+    cards = ""
+    for idx, (_, row) in enumerate(recs.iterrows()):
+        b     = row["brawler"]
+        url   = brawler_icons.get(b.upper(), "")
+        name  = b.title()
+        prob  = row["win_prob"]
+        glow  = "box-shadow:0 0 14px rgba(255,227,53,0.8);" if idx == 0 else ""
+        bord  = "#FFE135" if idx == 0 else "rgba(255,255,255,0.35)"
+        if url:
+            img_html = f'<img src="{url}" style="width:76px;height:76px;border-radius:50%;border:3px solid {bord};object-fit:cover;display:block;{glow}">'
+        else:
+            img_html = f'<div style="width:76px;height:76px;border-radius:50%;border:3px solid {bord};background:#1a2a5e;display:flex;align-items:center;justify-content:center;{glow}"><span style="color:white;font-size:9px;">{name}</span></div>'
+        cards += f'<div style="display:inline-block;text-align:center;margin:6px 10px;vertical-align:top;">{img_html}<div style="color:white;font-size:11px;margin-top:4px;">{name}</div><div style="color:#FFE135;font-size:12px;font-weight:bold;">{prob:.1%}</div></div>'
+    return f'<div style="text-align:center;padding:8px 0;">{cards}</div>'
+
+# ─────────────────────────────────────────────
 # UI
 # ─────────────────────────────────────────────
 
-st.title("🎮 BrawlPick")
-st.caption(f"Draft recommender · {meta['n_train']:,} ranked matches · {meta['cv_accuracy_mean']:.0%} CV accuracy")
+st.markdown('<h1 style="text-align:center;margin-bottom:0;">💀 BRAWLPICK</h1>', unsafe_allow_html=True)
+st.markdown(f'<p style="text-align:center;color:rgba(255,255,255,0.45);font-size:12px;margin-top:2px;">{meta["n_train"]:,} ranked matches · {meta["cv_accuracy_mean"]:.0%} CV accuracy</p>', unsafe_allow_html=True)
 
+# Map bar
 col_map, col_lock, col_reset = st.columns([3, 1, 1])
 with col_map:
     current_display = next(
@@ -229,8 +318,13 @@ with col_map:
         map_display_options[0]
     )
     if st.session_state.map_locked:
-        st.markdown(f"**Map:** {current_display}")
-        st.caption("Map is locked for this draft.")
+        mode_label = map_mode.get(st.session_state.map_name.upper(), "")
+        st.markdown(f"""
+        <div style="background:rgba(15,30,80,0.9);border:2px solid rgba(255,227,53,0.35);border-radius:8px;padding:10px 16px;">
+            <div style="color:rgba(255,255,255,0.5);font-size:11px;letter-spacing:2px;">{mode_label.upper()}</div>
+            <div style="color:#FFE135;font-size:18px;">{st.session_state.map_name}</div>
+        </div>
+        """, unsafe_allow_html=True)
     else:
         selected_display = st.selectbox(
             f"Map ({len(map_display_options)} maps with 10+ matches)",
@@ -264,50 +358,17 @@ with col_reset:
         st.session_state.map_locked = False
         st.rerun()
 
-st.divider()
-
 if not st.session_state.map_locked:
     st.info("Select a map and click **Lock Map** to start the draft.")
     st.stop()
 
-# ─────────────────────────────────────────────
 # Draft board
-# ─────────────────────────────────────────────
-
 next_slot = next_pick_slot()
-
-st.subheader("Draft Board")
-slot_cols = st.columns(6)
-
-TEAM_COLOR = {"A": "🟦", "B": "🟥"}
-TEAM_LABEL = {"A": "You", "B": "Enemy"}
-
-for i, col in enumerate(slot_cols):
-    with col:
-        team     = DRAFT_ORDER[i]
-        pick_num = i + 1
-        is_next  = (i == next_slot)
-        pick     = st.session_state.draft[i]
-        label    = f"{TEAM_COLOR[team]} Pick {pick_num} · {TEAM_LABEL[team]}"
-
-        if pick:
-            url = brawler_icons.get(pick)
-            if url:
-                st.image(url, width=64)
-            st.markdown(f"**{pick.title()}**")
-            st.caption(label)
-        elif is_next:
-            st.markdown("### ⬇️")
-            st.markdown(f"**{label}**")
-            st.caption("_Now picking_")
-        else:
-            st.markdown("◻️")
-            st.caption(label)
-
+st.markdown(_draft_board_html(st.session_state.draft, next_slot), unsafe_allow_html=True)
 st.divider()
 
 # ─────────────────────────────────────────────
-# Pick input
+# Pick section
 # ─────────────────────────────────────────────
 
 if next_slot is not None:
@@ -316,90 +377,74 @@ if next_slot is not None:
     available      = [b for b in all_brawlers if b not in already_picked]
 
     if team_picking == "A":
-        st.subheader(f"🟦 Pick {next_slot + 1} — Your Pick")
+        st.markdown('<h3 style="text-align:center;letter-spacing:3px;">PICK YOUR BRAWLER</h3>', unsafe_allow_html=True)
         my_team, enemy_team = get_teams()
 
         with st.spinner("Calculating recommendations..."):
             recs = recommend(st.session_state.map_name, my_team, enemy_team)
 
-        top5 = recs.head(5)
-        st.markdown("**Recommended picks:**")
-        rec_cols = st.columns(5)
-        for j, (_, row) in enumerate(top5.iterrows()):
-            with rec_cols[j]:
-                url = brawler_icons.get(row["brawler"])
-                if url:
-                    st.image(url, width=64)
-                st.metric(row["brawler"].title(), f"{row['win_prob']:.1%}")
-
+        st.markdown(_rec_cards_html(recs), unsafe_allow_html=True)
         st.write("")
-        chosen = st.selectbox(
-            "Confirm your pick:",
-            options=[""] + available,
-            format_func=lambda x: x.title() if x else "— Select brawler —",
-            key=f"pick_{next_slot}",
-        )
-        if chosen:
-            if st.button(f"Lock in {chosen.title()}", type="primary"):
-                st.session_state.rec_history.append({
-                    "pick_num": next_slot + 1,
-                    "recs":     recs.copy(),
-                    "chosen":   chosen,
-                })
-                st.session_state.draft[next_slot] = chosen
-                st.rerun()
+
+        col_pick, col_btn = st.columns([3, 1])
+        with col_pick:
+            chosen = st.selectbox(
+                "Confirm your pick:",
+                options=[""] + available,
+                format_func=lambda x: x.title() if x else "— Select brawler —",
+                key=f"pick_{next_slot}",
+            )
+        with col_btn:
+            st.write("")
+            st.write("")
+            if chosen:
+                if st.button(f"Lock In {chosen.title()}", type="primary", use_container_width=True):
+                    st.session_state.rec_history.append({
+                        "pick_num": next_slot + 1,
+                        "recs":     recs.copy(),
+                        "chosen":   chosen,
+                    })
+                    st.session_state.draft[next_slot] = chosen
+                    st.rerun()
 
     else:
-        st.subheader(f"🟥 Pick {next_slot + 1} — Enemy Pick")
-        st.caption("Enter the enemy's pick to continue.")
-        chosen = st.selectbox(
-            "Enemy picked:",
-            options=[""] + available,
-            format_func=lambda x: x.title() if x else "— Select brawler —",
-            key=f"pick_{next_slot}",
-        )
-        if chosen:
-            if st.button(f"Lock in {chosen.title()} (enemy)", type="primary"):
-                st.session_state.draft[next_slot] = chosen
-                st.rerun()
+        st.markdown('<h3 style="text-align:center;color:#d55b5b;letter-spacing:3px;">ENEMY PICK</h3>', unsafe_allow_html=True)
+        col_pick, col_btn = st.columns([3, 1])
+        with col_pick:
+            chosen = st.selectbox(
+                "Enemy picked:",
+                options=[""] + available,
+                format_func=lambda x: x.title() if x else "— Select brawler —",
+                key=f"pick_{next_slot}",
+            )
+        with col_btn:
+            st.write("")
+            st.write("")
+            if chosen:
+                if st.button("Lock In (enemy)", type="primary", use_container_width=True):
+                    st.session_state.draft[next_slot] = chosen
+                    st.rerun()
 
 else:
     # Draft complete
-    st.subheader("✅ Draft Complete")
+    st.markdown('<h2 style="text-align:center;">✅ DRAFT COMPLETE</h2>', unsafe_allow_html=True)
     my_team, enemy_team = get_teams()
-
-    cola, colb = st.columns(2)
-    with cola:
-        st.markdown("**🟦 Your Team**")
-        for b in my_team:
-            c1, c2 = st.columns([1, 3])
-            with c1:
-                url = brawler_icons.get(b)
-                if url:
-                    st.image(url, width=48)
-            with c2:
-                st.write(b.title())
-    with colb:
-        st.markdown("**🟥 Enemy Team**")
-        for b in enemy_team:
-            c1, c2 = st.columns([1, 3])
-            with c1:
-                url = brawler_icons.get(b)
-                if url:
-                    st.image(url, width=48)
-            with c2:
-                st.write(b.title())
 
     my_avg    = sum(encode_brawler(b) for b in my_team)    / len(my_team)
     enemy_avg = sum(encode_brawler(b) for b in enemy_team) / len(enemy_team)
-    edge = my_avg - enemy_avg
+    edge      = my_avg - enemy_avg
+
+    cola, colb = st.columns(2)
+    with cola:
+        blue_slots = "".join(_slot_html(b, False, "A") for b in my_team)
+        st.markdown(f'<div style="color:#5b9bd5;font-size:13px;letter-spacing:3px;margin-bottom:8px;">YOUR TEAM</div><div style="display:flex;justify-content:center;background:rgba(30,90,180,0.2);border:2px solid rgba(91,155,213,0.5);border-radius:14px;padding:16px;">{blue_slots}</div>', unsafe_allow_html=True)
+        st.metric("Avg Win Rate", f"{my_avg:.1%}")
+    with colb:
+        red_slots = "".join(_slot_html(b, False, "B") for b in enemy_team)
+        st.markdown(f'<div style="color:#d55b5b;font-size:13px;letter-spacing:3px;margin-bottom:8px;">ENEMY TEAM</div><div style="display:flex;justify-content:center;background:rgba(180,30,30,0.2);border:2px solid rgba(213,91,91,0.5);border-radius:14px;padding:16px;">{red_slots}</div>', unsafe_allow_html=True)
+        st.metric("Avg Win Rate", f"{enemy_avg:.1%}")
 
     st.divider()
-    m1, m2 = st.columns(2)
-    m1.metric("Your Team Avg Win Rate",    f"{my_avg:.1%}")
-    m2.metric("Enemy Team Avg Win Rate",   f"{enemy_avg:.1%}")
-    st.caption("Based on each brawler's historical win rate across all matches in the dataset.")
-
     if edge >= 0.03:
         st.success("Strong draft! Your brawlers have a clear historical advantage.")
     elif edge >= 0.01:
@@ -435,12 +480,9 @@ if st.session_state.rec_history:
             for _, row in top.iterrows():
                 c0, c1, c2 = st.columns([1, 3, 2])
                 is_chosen = row["brawler"] == chosen
-                rank_str  = f"**{int(row.name)+1}**" if is_chosen else str(int(row.name)+1)
-                name_str  = f"**{row['brawler'].title()} ✓**" if is_chosen else row["brawler"].title()
-                prob_str  = f"**{row['win_prob']:.1%}**" if is_chosen else f"{row['win_prob']:.1%}"
-                c0.markdown(rank_str)
-                c1.markdown(name_str)
-                c2.markdown(prob_str)
+                c0.markdown(f"**{int(row.name)+1}**" if is_chosen else str(int(row.name)+1))
+                c1.markdown(f"**{row['brawler'].title()} ✓**" if is_chosen else row["brawler"].title())
+                c2.markdown(f"**{row['win_prob']:.1%}**" if is_chosen else f"{row['win_prob']:.1%}")
 
 # Sidebar
 with st.sidebar:
