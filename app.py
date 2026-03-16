@@ -419,7 +419,7 @@ if next_slot is not None:
                 global_wr = brawler_win_rates.get(b, brawler_global_mean)
                 rows.append({
                     "Brawler":           b.title(),
-                    "Map Win Rate":      f"{map_wr:.1%} ({map_games} games)" if map_wr is not None else "— no map data",
+                    "Map Win Rate":      (f"{map_wr:.1%} ({map_games} games)" if map_games is not None else f"{map_wr:.1%}") if map_wr is not None else "— no map data",
                     "Global Win Rate":   f"{global_wr:.1%}",
                 })
             table = pd.DataFrame(rows)
