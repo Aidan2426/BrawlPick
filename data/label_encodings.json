@@ -1,39 +1,78 @@
 {
   "map": [
-    "Backyard Bowl",
+    "Aridity",
     "Beach Ball",
+    "Belle's Rock",
+    "Below Zero",
+    "Bouncy Bowl",
     "Cabin Fever",
     "Choral Chambers",
     "Crab Claws",
     "Crescendo",
+    "Crystal Arcade",
+    "Deathcap Trap",
     "Deep End",
     "Double Swoosh",
+    "Dry Season",
     "Dueling Beetles",
+    "Flaring Phoenix",
     "Flowing Springs",
     "Fortress Fall",
+    "Four Levels",
+    "Freezing ripples",
+    "Gem Fort",
+    "Goldarm Gulch",
     "Grass Knot",
+    "H for...",
+    "H is for Holiday",
     "Hard Rock Mine",
     "Healthy Middle Ground",
     "Hot Potato",
+    "Hyacinth House",
     "Hyperspace",
+    "Insane Streamer",
     "Journey of a Thousand Steps",
+    "Kaboom Canyon",
+    "Konnakol",
     "Layer Cake",
-    "No Good Deed",
+    "Match 1123581321",
+    "New Perspective",
     "Nutmeg",
     "Open Business",
+    "Open Space",
+    "Opening Move",
     "Out in the Open",
     "Parallel Plays",
+    "Penalty Kick",
     "Perpetual Motion",
+    "Picturesque",
     "Pinball Dreams",
     "Pinhole Punt",
+    "Pinned Down",
+    "Priceless Cactus",
+    "Puck Palace",
     "Quintillion",
     "Railroad Robbery",
+    "Razzle Dazzle",
+    "Retina",
+    "Rooftop Runners",
+    "Rustic Arcade",
+    "Safe(r) Zone",
+    "Shooting Star",
     "Siberian Stand Off",
     "Sidetrack",
     "Singed Earth",
     "Slippery Slap",
     "Sneaky Fields",
+    "Storage Sector",
+    "Streets with No Name",
+    "Sunny Soccer",
+    "Super Beach",
+    "Super Center",
+    "The Seven Pillars of Humanity",
     "Tip Toe",
+    "Triple Dribble",
+    "Weak Foot",
     "nan"
   ],
   "game_mode": [
@@ -56,12 +95,15 @@
     "Bbarena",
     "Bizarrecircus",
     "Bizarrecircusislandshowdown",
+    "Default",
     "Grassfield",
     "Hub",
     "Iceislandshowdownbb",
     "Madevilmanor",
     "Mine",
+    "Mortuary",
     "Pyramidquest",
+    "Retropolis",
     "Rumblejungle",
     "Scrapyard",
     "Stuntshowbb",
@@ -277,7 +319,8 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY"
+    "ZIGGY",
+    "nan"
   ],
   "team_a_brawler3": [
     "8-BIT",
@@ -379,7 +422,8 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY"
+    "ZIGGY",
+    "nan"
   ],
   "team_b_brawler1": [
     "8-BIT",
@@ -481,7 +525,8 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY"
+    "ZIGGY",
+    "nan"
   ],
   "team_b_brawler2": [
     "8-BIT",
@@ -583,7 +628,8 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY"
+    "ZIGGY",
+    "nan"
   ],
   "team_b_brawler3": [
     "8-BIT",
@@ -685,7 +731,8 @@
     "TICK",
     "TRUNK",
     "WILLOW",
-    "ZIGGY"
+    "ZIGGY",
+    "nan"
   ],
   "team_a_brawler1_class": [
     "Artillery",
@@ -763,7 +810,8 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary"
+    "Ultra Legendary",
+    "Unknown"
   ],
   "team_a_brawler3_rarity": [
     "Common",
@@ -772,7 +820,8 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary"
+    "Ultra Legendary",
+    "Unknown"
   ],
   "team_b_brawler1_rarity": [
     "Common",
@@ -781,7 +830,8 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary"
+    "Ultra Legendary",
+    "Unknown"
   ],
   "team_b_brawler2_rarity": [
     "Common",
@@ -790,7 +840,8 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary"
+    "Ultra Legendary",
+    "Unknown"
   ],
   "team_b_brawler3_rarity": [
     "Common",
@@ -799,6 +850,7 @@
     "Mythic",
     "Rare",
     "Super Rare",
-    "Ultra Legendary"
+    "Ultra Legendary",
+    "Unknown"
   ]
 }
