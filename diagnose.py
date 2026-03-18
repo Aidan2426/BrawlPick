@@ -178,7 +178,7 @@ def show_model_predict(map_name, my_team, enemy_team, n_samples=30):
         map_str = f"{row['map_wr']:.1%}" if row["map_wr"] is not None else "  —  "
         print(f"  {rank:<4} {row['brawler'].title():<22} {row['model_win']:.1%}       {map_str:>7}   {row['global_wr']:.1%}")
     print()
-
+#df
 
 # ── Interactive loop ──────────────────────────────────────────────────────────
 
