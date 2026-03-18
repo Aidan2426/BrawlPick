@@ -62,6 +62,12 @@ print("Loading training data...")
 df = pd.read_csv(DATA_DIR / "training_data.csv")
 print(f"  {len(df):,} rows, {len(df.columns)} columns")
 
+# Cap per-map rows so no single map dominates training
+MAX_PER_MAP = 500
+before = len(df)
+df = df.groupby("map", group_keys=False).apply(lambda g: g.sample(min(len(g), MAX_PER_MAP), random_state=42)).reset_index(drop=True)
+print(f"  After per-map cap ({MAX_PER_MAP}): {len(df):,} rows  (removed {before - len(df):,})")
+
 # Uppercase brawler columns (data should already be uppercase, but be safe)
 for col in BRAWLER_SLOTS:
     if col in df.columns:

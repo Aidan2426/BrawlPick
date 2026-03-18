@@ -410,8 +410,11 @@ else:
         mode_icon  = MODE_ICONS.get(mode, "🗺")
         st.markdown(f'<div style="color:{mode_color};font-size:13px;letter-spacing:3px;margin:10px 0 6px;">{mode_icon} {mode.upper()}</div>', unsafe_allow_html=True)
 
-        cols = st.columns(len(mode_maps))
-        for col, (_, mrow) in zip(cols, mode_maps.iterrows()):
+        n_cols = min(len(mode_maps), 6)
+        # Pad with empty columns so maps don't stretch across full width when few maps
+        pad = 6 - n_cols
+        cols = st.columns([1] * n_cols + [pad] if pad > 0 else [1] * n_cols)
+        for col, (_, mrow) in zip(cols[:n_cols], mode_maps.iterrows()):
             map_name = mrow["map_name"]
             img_url  = map_image_url.get(map_name, "")
             n_games  = int(map_counts.get(map_name, 0))
@@ -421,7 +424,7 @@ else:
 
             with col:
                 if img_url:
-                    st.markdown(f'<div style="width:100%;height:130px;background:rgba(0,0,0,0.3);border-radius:8px;border:{border};overflow:hidden;display:flex;align-items:center;justify-content:center;"><img src="{img_url}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"></div>', unsafe_allow_html=True)
+                    st.markdown(f'<img src="{img_url}" style="width:100%;height:auto;border-radius:8px;border:{border};display:block;">', unsafe_allow_html=True)
                 st.markdown(f'<div style="color:{"#FFE135" if is_selected else "white"};font-size:11px;text-align:center;margin-top:4px;margin-bottom:2px;">{map_name}</div>', unsafe_allow_html=True)
                 st.markdown(f'<div style="color:rgba(255,255,255,0.4);font-size:10px;text-align:center;margin-bottom:6px;">{n_games} games</div>', unsafe_allow_html=True)
                 if st.button("Select", key=f"map_{map_name}", use_container_width=True,

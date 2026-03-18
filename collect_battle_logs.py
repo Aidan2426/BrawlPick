@@ -73,6 +73,22 @@ def encode_tag(tag: str) -> str:
 # STEP 3: Leaderboard → seed player tags
 # ─────────────────────────────────────────────
 
+RANKED_SEED_FILE = OUTPUT_DIR / "ranked_seed_tags.txt"
+
+
+def load_ranked_seeds() -> list[str]:
+    """Load pre-scraped ranked leaderboard tags from brawlace.com (Season 42)."""
+    if not RANKED_SEED_FILE.exists():
+        return []
+    tags = []
+    for line in RANKED_SEED_FILE.read_text().splitlines():
+        tag = line.strip()
+        if tag:
+            tags.append(tag)
+    print(f"  Loaded {len(tags)} ranked seed players from {RANKED_SEED_FILE.name}")
+    return tags
+
+
 def collect_top_players() -> list[str]:
     print("\n=== STEP 3: Collecting Leaderboard Players ===")
 
@@ -282,12 +298,16 @@ if __name__ == "__main__":
     print("Brawl Stars Data Collection — Steps 3 & 4")
     print("=" * 45)
 
-    # Step 3 — leaderboard
-    try:
-        seed_tags = collect_top_players()
-    except Exception as e:
-        print(f"ERROR in Step 3: {e}")
-        seed_tags = []
+    # Step 3 — seed players: ranked leaderboard first, fall back to trophy leaderboard
+    print("\n=== STEP 3: Loading Seed Players ===")
+    seed_tags = load_ranked_seeds()
+    if not seed_tags:
+        print("  No ranked seed file found — falling back to trophy leaderboard API")
+        try:
+            seed_tags = collect_top_players()
+        except Exception as e:
+            print(f"ERROR in Step 3: {e}")
+            seed_tags = []
 
     if not seed_tags:
         raise SystemExit("No seed players found — check your API key and IP registration.")
